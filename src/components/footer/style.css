@@ -21,4 +21,9 @@
     height: 30px;
     width: 30px;
     color: #ffffff;
+    transition: transform 0.3s ease-in-out;
+}
+
+.social-icons:hover{
+    transform: translateY(-5px);
 }

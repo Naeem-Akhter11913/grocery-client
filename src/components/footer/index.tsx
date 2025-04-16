@@ -14,23 +14,23 @@ const Footer = () => {
             <p className="mt-3">Awesome grocery store website template</p>
             <ul className="list-unstyled">
               <li className="mb-2">
-                <i className="fas fa-map-marker-alt text-success me-2"></i>
+                <img src="/footer/icon-clock.svg" alt="contact" height={20}className='me-2' />
                 <strong>Address:</strong> 5171 W Campbell Ave, undefined Kent, Utah 53127 United States
               </li>
               <li className="mb-2">
-                <i className="fas fa-phone text-success me-2"></i>
+                <img src="/footer/icon-contact.svg" alt="contact" height={20} className='me-2'/>
                 <strong>Call Us:</strong> (+91) - 540-025-124553
               </li>
               <li className="mb-2">
-                <i className="fas fa-envelope text-success me-2"></i>
+                <img src="/footer/icon-email-2.svg" alt="contact" height={20} className='me-2' />
                 <strong>Email:</strong> sale@Nest.com
               </li>
               <li>
-                <i className="fas fa-clock text-success me-2"></i>
+                <img src="/footer/icon-location.svg" alt="contact" height={20}className='me-2' />
                 <strong>Hours:</strong> 10:00 - 18:00, Mon - Sat
               </li>
             </ul>
-            <h6>Install App</h6>
+            <h4>Install App</h4>
             <p>From App Store or Google Play</p>
             <div className='d-flex gap-2'>
               <img src="/secondNavebar/app-store.jpg" alt="app-store" height={40} />
@@ -94,7 +94,7 @@ const Footer = () => {
 
           <hr className='mt-4' />
 
-          <div className='d-flex justify-content-between align-items-center'>
+          <div className='d-flex justify-content-between align-items-center pb-4'>
             <div>
               <p className='mb-0'>© 2022, Nest - HTML Ecommerce Template</p>
               <p className='mb-0'>All rights reserved</p>
