@@ -1,0 +1,25 @@
+.middle-font-size {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.bi-chevron-compact-down , .bi-chevron-compact-up{
+    margin-left: 5px;
+}
+
+.align-items-center-active {
+    color: #3BB77E;
+}
+
+.align-items-center:hover {
+    cursor: pointer;
+}
+
+.middle-content>div:hover {
+    color: #3BB77E;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+.custom-gap{
+    gap: 38px !important;
+}
