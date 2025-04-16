@@ -5,3 +5,9 @@ export type naveType = {
     icon?: ReactNode,
     dropdown: boolean
 }
+
+export type CategoryItem = {
+    image: string,
+    title: string,
+    items: number
+}

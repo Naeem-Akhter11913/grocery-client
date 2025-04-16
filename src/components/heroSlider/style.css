@@ -1,0 +1,57 @@
+.custom-caption {
+    position: absolute;
+    top: 35%;
+    left: 10%;
+    transform: translateY(-50%);
+    text-align: left;
+    width: 100%;
+    padding: 20px;
+}
+
+.custom-caption h2 {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.custom-caption p {
+    font-size: 1.1rem;
+}
+
+
+.carousel-indicators [data-bs-target] {
+    width: 11px !important;
+    height: 11px !important;
+    border-radius: 50%;
+}
+
+.send-message {
+    position: relative;
+}
+
+.send-message input {
+    width: 27rem;
+    height: 60px;
+    border: none;
+    border-radius: 31px;
+    padding-left: 60px;
+    background-image: url('/heroSlider/icon-plane.png');
+    background-repeat: no-repeat;
+    background-position: 20px center;
+    background-size: 20px;
+}
+
+.send-message input:focus-visible{
+    outline: none;
+}
+
+.send-message button {
+    position: absolute;
+    left: 320px;
+    top: 1px;
+    border: none;
+    background-color: #3BB77E;
+    padding: 17px;
+    width: 10rem;
+    color: #ffffff;
+    border-radius: 31px;
+}

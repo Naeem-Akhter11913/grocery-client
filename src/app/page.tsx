@@ -1,88 +1,56 @@
-// export default function Home() {
-//   return (
-//     <div id="carouselExampleIndicators" className="carousel slide" data-bs-ride="carousel">
-//       <div className="carousel-indicators">
-//         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
-//         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-//         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-//       </div>
-//       <div className="carousel-inner">
-//         <div className="carousel-item active">
-//           <img src="/heroSlider/slider-1.png" className="d-block w-100" alt="slider-1" />
-//         </div>
-//         <div className="carousel-item">
-//           <img src="/heroSlider/slider-2.png" className="d-block w-100" alt="slider-2" />
-//         </div>
-//       </div>
-//       <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-//         <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-//         <span className="visually-hidden">Previous</span>
-//       </button>
-//       <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-//         <span className="carousel-control-next-icon" aria-hidden="true"></span>
-//         <span className="visually-hidden">Next</span>
-//       </button>
-//     </div>
-//   );
-// }
+import FeaturedCategories from "@/components/featuredCategories";
+import FeatureCart from "@/components/featuredCategories/featureCart";
+import HeroSlider from "@/components/heroSlider";
+import { LeftArrow, RightArrow } from "@/utils/Arrows";
+import { CategoryItem } from "@/utils/types";
 
-'use client'
+const items: CategoryItem[] = [
+  { image: '/feature-category/cat-1.png', title: 'Mango Madness', items: 12 },
+  { image: '/feature-category/cat-2.png', title: 'Banana Bonanza', items: 5 },
+  { image: '/feature-category/cat-3.png', title: 'Orange Zest', items: 17 },
+  { image: '/feature-category/cat-4.png', title: 'Pineapple Paradise', items: 8 },
+  { image: '/feature-category/cat-5.png', title: 'Grapes Galore', items: 3 },
+  { image: '/feature-category/cat-9.png', title: 'Cherry Cheer', items: 20 },
+  { image: '/feature-category/cat-11.png', title: 'Blueberry Burst', items: 16 },
+  { image: '/feature-category/cat-12.png', title: 'Peach Perfection', items: 11 },
+  { image: '/feature-category/cat-14.png', title: 'Plum Pleasure', items: 18 },
+  { image: '/feature-category/cat-13.png', title: 'Apricot Aroma', items: 6 },
+  { image: '/feature-category/cat-14.png', title: 'Plum Pleasure', items: 18 },
+  { image: '/feature-category/cat-9.png', title: 'Cherry Cheer', items: 20 },
+  { image: '/feature-category/cat-15.png', title: 'Watermelon Wave', items: 4 },
+  { image: '/feature-category/cat-14.png', title: 'Plum Pleasure', items: 18 },
+];
+
 export default function Home() {
+
   return (
-    <div id="carouselExampleIndicators" className="carousel slide" data-bs-ride="carousel">
-      <div className="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        {/* <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button> */}
-      </div>
-      <div className="carousel-inner">
-        <div className="carousel-item active position-relative">
-          <img src="/heroSlider/slider-1.png" className="d-block w-100" alt="slider-1" />
-          <div className="custom-caption">
-            <h2>First Slide Heading</h2>
-            <p>This is a description for the first slide.</p>
+    <>
+      <HeroSlider />
+      <>
+        <div className="d-flex justify-content-between align-items-center mx-4 my-4">
+          <div className="d-flex flex-column flex-md-row align-items-center gap-3 gap-md-5">
+            <h3 className="mb-0">Featured Categories</h3>
+            <ul className="d-flex flex-wrap justify-content-center align-items-center gap-3 mb-0 list-unstyled">
+              <li><a className="nav-link px-2" href="shop-grid-right.html">Cake &amp; Milk</a></li>
+              <li><a className="nav-link px-2" href="shop-grid-right.html">Coffes &amp; Teas</a></li>
+              <li><a className="nav-link px-2 active" href="shop-grid-right.html">Pet Foods</a></li>
+              <li><a className="nav-link px-2" href="shop-grid-right.html">Vegetables</a></li>
+            </ul>
+          </div>
+          <div className="d-flex gap-2 ">
+            <div className="d-flex justify-content-center align-items-center p-1 rounded-5 custom-colored">
+              <LeftArrow />
+            </div>
+            <div className="d-flex justify-content-center align-items-center p-1 rounded-5 custom-colored">
+              <RightArrow />
+            </div>
           </div>
         </div>
-        <div className="carousel-item position-relative">
-          <img src="/heroSlider/slider-2.png" className="d-block w-100" alt="slider-2" />
-          <div className="custom-caption">
-            <h2>Second Slide Heading</h2>
-            <p>This is a description for the second slide.</p>
-          </div>
-        </div>
-      </div>
-      <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-        <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span className="visually-hidden">Previous</span>
-      </button>
-      <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-        <span className="carousel-control-next-icon" aria-hidden="true"></span>
-        <span className="visually-hidden">Next</span>
-      </button>
 
-      <style jsx>{`
-        .custom-caption {
-          position: absolute;
-          top: 50%;
-          left: 5%;
-          transform: translateY(-50%);
-          color: white;
-          text-align: left;
-          max-width: 40%;
-          background: rgba(0, 0, 0, 0.4);
-          padding: 20px;
-          border-radius: 8px;
-        }
+        <FeaturedCategories items={items} />
+        <FeatureCart />
+      </>
 
-        .custom-caption h2 {
-          font-size: 2rem;
-          font-weight: bold;
-        }
-
-        .custom-caption p {
-          font-size: 1.1rem;
-        }
-      `}</style>
-    </div>
+    </>
   );
 }
