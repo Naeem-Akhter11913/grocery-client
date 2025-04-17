@@ -1,6 +1,7 @@
 import FeaturedCategories from "@/components/featuredCategories";
 import FeatureCart from "@/components/featuredCategories/featureCart";
 import HeroSlider from "@/components/heroSlider";
+import PopularProducts from "@/components/popularProducts";
 import { LeftArrow, RightArrow } from "@/utils/Arrows";
 import { CategoryItem } from "@/utils/types";
 
@@ -49,6 +50,37 @@ export default function Home() {
 
         <FeaturedCategories items={items} />
         <FeatureCart />
+      </>
+
+      <>
+        <div className="d-flex justify-content-between align-items-center  mx-4 my-4">
+          <h3>Popular Products</h3>
+          <ul className="d-flex justify-content-between align-items-center gap-4 list-unstyled popular-custom-style">
+            <li className="">
+              All
+            </li>
+            <li className="">
+              Milks &amp; Dairies
+            </li>
+            <li className="">
+              Coffes &amp; Teas
+            </li>
+            <li className="">
+              Pet Foods
+            </li>
+            <li className="">
+              Meats
+            </li>
+            <li className="">
+              Vegetables
+            </li>
+            <li className="">
+              Fruits
+            </li>
+          </ul>
+        </div>
+
+        <PopularProducts />
       </>
 
     </>
