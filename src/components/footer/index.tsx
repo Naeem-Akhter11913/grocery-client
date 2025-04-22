@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 import './style.css'
 import { Facebook, Instagram, Pinterest, Twitter, Youtube } from '@/utils/Arrows'

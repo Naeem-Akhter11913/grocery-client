@@ -11,15 +11,19 @@
   "dependencies": {
     "bootstrap": "^5.3.5",
     "grocery-client": "file:",
+    "jquery": "^3.7.1",
     "next": "15.3.0",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@types/jquery": "^3.5.32",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@types/slick-carousel": "^1.6.40",
     "eslint": "^9",
     "eslint-config-next": "15.3.0",
     "typescript": "^5"

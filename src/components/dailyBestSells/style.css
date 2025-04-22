@@ -1,0 +1,92 @@
+.wrapper {
+  width: 100%;
+  padding-top: 20px;
+  text-align: center;
+}
+
+h2 {
+  font-family: sans-serif;
+  color: #fff;
+}
+
+.carousel {
+  width: 90%;
+  margin: 0px auto;
+}
+
+.slick-slide {
+  margin: 10px;
+}
+
+.slick-slide img {
+  width: 100%;
+  border: 2px solid #fff;
+}
+
+.wrapper .slick-dots li button:before {
+  font-size: 20px;
+  color: white;
+}
+
+.slick-track {
+  transition: transform 1.5s cubic-bezier(0.65, 0, 0.35, 1) !important;
+}
+
+.slick-slide {
+  width: 276px !important;
+}
+
+.cover-bg-image {
+  background-image: url('/daily-best-sells/banner-4.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 470px;
+  border-radius: 10px;
+  object-fit: fill;
+}
+
+
+/* .daily-best-sale-text {
+  width: 200px;
+} */
+
+/* .daily-best-sale-text h1 {
+  transition: transform 0.3s ease-in-out;
+
+} */
+.daily-best-sale-text button {
+  background-color: #3BB77E;
+  border: none;
+  padding: 8px 16px;
+  color: white;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  width: 125px;
+  text-align: start;
+  transition: width 0.3s ease, background-color 0.3s ease;
+  display: flex;
+  /* align-items:; */
+}
+
+.daily-best-sale-text button span {
+  margin-left: 4px;
+  transition: margin-left 0.3s ease;
+}
+
+/* Animate span on button hover */
+.daily-best-sale-text button:hover span {
+  margin-left: 14px;
+}
+
+.daily-best-sale-text:hover h3{
+  transform: translateY(-5px);
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.daily-best-sale-text button:hover {
+  background-color: #FDC040;
+  width: 135px;
+}

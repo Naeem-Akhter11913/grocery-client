@@ -1,3 +1,10 @@
+'use client'
+// import DailyBestSells from "@/components/dailyBestSells";
+const DailyBestSells = dynamic(() => import("@/components/dailyBestSells"), {
+  ssr: false, // This disables server-side rendering
+});
+import dynamic from "next/dynamic";
+import DealsOfTheDay from "@/components/dealsOfTheDay";
 import FeaturedCategories from "@/components/featuredCategories";
 import FeatureCart from "@/components/featuredCategories/featureCart";
 import HeroSlider from "@/components/heroSlider";
@@ -23,6 +30,10 @@ const items: CategoryItem[] = [
 ];
 
 export default function Home() {
+
+  // if (typeof window !== 'undefined') {
+  //   return;
+  // }
 
   return (
     <>
@@ -81,6 +92,14 @@ export default function Home() {
         </div>
 
         <PopularProducts />
+      </>
+
+      <>
+        <DailyBestSells />
+      </>
+
+      <>
+        <DealsOfTheDay />
       </>
 
     </>

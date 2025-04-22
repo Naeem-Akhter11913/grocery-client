@@ -3,14 +3,14 @@ import './style.css'
 
 const HeroSlider = () => {
   return (
-    <div id="carouselExampleIndicators" className="carousel slide rounded-1 p-3 mt-2" data-bs-ride="carousel">
+    <div id="carouselExampleIndicators" className="carousel slide rounded-1 mt-2" data-bs-ride="carousel">
       <div className="carousel-indicators">
         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
       </div>
       <div className="carousel-inner rounded-5">
         <div className="carousel-item active position-relative">
-          <img src="/heroSlider/slider-1.png" className="d-block w-100" alt="slider-1" />
+          <img src="/heroSlider/slider-1.png" className="d-block" alt="slider-1" />
           <div className="custom-caption mt-5">
             <h1 className="display-2 mb-40">
               Don’t miss amazing
