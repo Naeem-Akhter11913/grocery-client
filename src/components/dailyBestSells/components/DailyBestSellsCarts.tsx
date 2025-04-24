@@ -31,7 +31,7 @@ const DailyBestSellsCarts: React.FC<DailyBestSellsCartsProps> = ({ item, index }
             className="card shadow-sm position-relative custom-cart-hover-effect position-relative-custom"
             onMouseEnter={() => setHoveredIndex(index)}
             onMouseLeave={() => setHoveredIndex(null)}
-            // style={{ border:'1px solid red', width: '700px',}}
+            style={{ height: '500px', }}
         >
             <span className="custom-badge bg-danger position-absolute top-0 start-0">
                 {item.tag}
@@ -78,10 +78,10 @@ const DailyBestSellsCarts: React.FC<DailyBestSellsCartsProps> = ({ item, index }
                             {item.price.currency}{item.price.original.toFixed(2)}
                         </small>
                     </div>
-                    <button className="btn btn-success custom-button-css">
-                        <CartIcon /> Add
-                    </button>
                 </h5>
+                <button className="btn btn-success custom-button-css w-100">
+                    <CartIcon /> Add
+                </button>
 
 
             </div>

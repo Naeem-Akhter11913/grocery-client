@@ -9,8 +9,9 @@ import FeaturedCategories from "@/components/featuredCategories";
 import FeatureCart from "@/components/featuredCategories/featureCart";
 import HeroSlider from "@/components/heroSlider";
 import PopularProducts from "@/components/popularProducts";
-import { LeftArrow, RightArrow } from "@/utils/Arrows";
+import { ChevronRight, LeftArrow, RightArrow } from "@/utils/Arrows";
 import { CategoryItem } from "@/utils/types";
+import TrendingProducts from "@/components/trending";
 
 const items: CategoryItem[] = [
   { image: '/feature-category/cat-1.png', title: 'Mango Madness', items: 12 },
@@ -95,13 +96,28 @@ export default function Home() {
       </>
 
       <>
+        <div className="d-flex justify-content-between mx-3 my-3">
+          <h2>Daily Best Sells</h2>
+          <ul className="d-flex gap-3 list-unstyled">
+            <li>Featured</li>
+            <li>Popular</li>
+            <li>New added</li>
+          </ul>
+        </div>
         <DailyBestSells />
       </>
 
       <>
+        <div className="d-flex justify-content-between mx-3 my-3">
+          <h2>Deals Of The Day</h2>
+          <p>All See <ChevronRight /></p>
+        </div>
         <DealsOfTheDay />
       </>
 
+      <>
+        <TrendingProducts />
+      </>
     </>
   );
 }

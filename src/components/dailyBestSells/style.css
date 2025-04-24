@@ -45,15 +45,6 @@ h2 {
   object-fit: fill;
 }
 
-
-/* .daily-best-sale-text {
-  width: 200px;
-} */
-
-/* .daily-best-sale-text h1 {
-  transition: transform 0.3s ease-in-out;
-
-} */
 .daily-best-sale-text button {
   background-color: #3BB77E;
   border: none;
@@ -89,4 +80,11 @@ h2 {
 .daily-best-sale-text button:hover {
   background-color: #FDC040;
   width: 135px;
+}
+.custom-heigth {
+  position: relative !important;
+  max-width: 306px;
+  height: 500px; /* ✅ Fixed height */
+  overflow: hidden; /* Optional: hide any overflow */
+  border: 1px solid green;
 }

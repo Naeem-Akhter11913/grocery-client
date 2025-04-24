@@ -1,0 +1,33 @@
+.margin_bottom{
+    margin-bottom: 8rem;
+}
+.deals_container {
+    position: relative;
+}
+
+.timing_container {
+    position: absolute; /* <-- change this from relative to absolute */
+    top: 87%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+}
+.deals_container img{
+    /* width: 300px; */
+    border-radius: 12px;
+    height: 300px;
+    object-fit: cover;
+}
+.timing_sub_container{
+    line-height: 0;
+}
+
+.time_fixed_width{
+    width: 64px;
+    border-radius: 7px;
+}
+
+.time_fixed_width h1{
+    font-size: 30px;
+    font-weight: 100;
+}
