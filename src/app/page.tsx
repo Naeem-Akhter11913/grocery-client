@@ -12,6 +12,8 @@ import PopularProducts from "@/components/popularProducts";
 import { ChevronRight, LeftArrow, RightArrow } from "@/utils/Arrows";
 import { CategoryItem } from "@/utils/types";
 import TrendingProducts from "@/components/trending";
+import SliderComponent from "@/components/sliderComponent";
+import ServiceProvide from "@/components/service-provide/ServiceProvide";
 
 const items: CategoryItem[] = [
   { image: '/feature-category/cat-1.png', title: 'Mango Madness', items: 12 },
@@ -117,6 +119,14 @@ export default function Home() {
 
       <>
         <TrendingProducts />
+      </>
+
+      <>
+        <SliderComponent />
+      </>
+
+      <>
+      <ServiceProvide />
       </>
     </>
   );

@@ -1,0 +1,18 @@
+.custom-cart-container{
+    width: 284px;
+}
+.custom-cart-container img{
+    width: 50px;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.text-container{
+    padding: 0;
+}
+
+.text-container h3{
+    font-size: 20px;
+    font-weight: 400;
+}

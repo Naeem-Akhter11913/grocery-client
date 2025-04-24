@@ -1,0 +1,16 @@
+.slider-bg-img{
+    background-image: url('/slider-component/banner-10.png') ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: contain;
+    height: 400px;
+}
+.slider-img-container{
+    margin: 0;
+    padding: 0;
+    width: 40rem;
+
+}
+.slider-img-container img{
+    width: 90%;
+}
