@@ -2,6 +2,7 @@
 import React from 'react';
 import Image from 'next/image';
 import './style.css'
+import GreyLine from '../greyLine';
 
 const categories = [
   { name: 'Milks & Dairies', count: 30, icon: '/icons/milk.png' },
@@ -14,8 +15,7 @@ const categories = [
 const CategoryCard = () => {
   return (
     <div className="shadow-sm rounded-4 p-4">
-      <h5 className="fw-bold">Category</h5>
-      <hr className="mb-3 mt-1" style={{ borderTop: '3px solid #d1e7dd', width: '30%' }} />
+      <GreyLine title="Category" />
 
       {categories.map((cat, index) => (
         <div

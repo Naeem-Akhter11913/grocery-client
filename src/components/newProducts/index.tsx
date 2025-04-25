@@ -1,4 +1,5 @@
 import React from "react";
+import GreyLine from "../greyLine";
 
 interface Product {
   image: string;
@@ -31,8 +32,7 @@ const products: Product[] = [
 const NewProducts = () => {
   return (
     <div className="card p-3" style={{ width: "18rem" }}>
-      <h5 className="card-title mb-3">New products</h5>
-      <hr />
+      <GreyLine title="New products" />
       {products.map((product, index) => (
         <div key={index} className="d-flex align-items-center mb-3">
           <img 

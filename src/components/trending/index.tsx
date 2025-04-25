@@ -1,7 +1,7 @@
 import React from 'react'
 import './style.css'
-import { CartIcon } from '@/utils/Arrows'
 import { topSelling, trendingProducts, recentlyAdded, topRated } from './json'
+import GreyLine from '../greyLine'
 
 
 const TrendingProducts = () => {
@@ -9,13 +9,7 @@ const TrendingProducts = () => {
     <div className='d-flex gap-3 mx-3'>
 
       <div>
-        <div className="top-selling-wrapper">
-          <h2 className="top-selling-title">Top Selling</h2>
-          <div className="top-selling-underline-container">
-            <div className="green-underline"></div>
-            <div className="grey-line"></div>
-          </div>
-        </div>
+        <GreyLine title="Top Selling" />
         <div>
           {topSelling.map((item, index) => (
             <div className='top-sub-container' key={index}>
@@ -44,13 +38,7 @@ const TrendingProducts = () => {
         </div>
       </div>
       <div>
-        <div className="top-selling-wrapper">
-          <h2 className="top-selling-title">Top Selling</h2>
-          <div className="top-selling-underline-container">
-            <div className="green-underline"></div>
-            <div className="grey-line"></div>
-          </div>
-        </div>
+        <GreyLine title="Trending Products" />
         <div>
           {trendingProducts.map((item, index) => (
             <div className='top-sub-container' key={index}>
@@ -78,13 +66,7 @@ const TrendingProducts = () => {
         </div>
       </div>
       <div>
-        <div className="top-selling-wrapper">
-          <h2 className="top-selling-title">Top Selling</h2>
-          <div className="top-selling-underline-container">
-            <div className="green-underline"></div>
-            <div className="grey-line"></div>
-          </div>
-        </div>
+        <GreyLine title="Recently added" />
         <div>
           {recentlyAdded.map((item, index) => (
             <div className='top-sub-container' key={index}>
@@ -112,13 +94,7 @@ const TrendingProducts = () => {
         </div>
       </div>
       <div>
-        <div className="top-selling-wrapper">
-          <h2 className="top-selling-title">Top Selling</h2>
-          <div className="top-selling-underline-container">
-            <div className="green-underline"></div>
-            <div className="grey-line"></div>
-          </div>
-        </div>
+        <GreyLine title="Top Rated" />
         <div>
           {topRated.map((item, index) => (
             <div className='top-sub-container' key={index}>

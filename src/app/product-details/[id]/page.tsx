@@ -5,6 +5,7 @@ import NewProducts from '@/components/newProducts';
 import ProductDescription from '@/components/productDescription';
 import ProductInfo from '@/components/productInfo/ProductInfo';
 import ProductReview from '@/components/productReviews';
+import RelatedProducts from '@/components/relatedProducts';
 import ServiceProvide from '@/components/service-provide/ServiceProvide';
 import ShowAllProducts from '@/components/showAllProducts';
 import SliderComponent from '@/components/sliderComponent';
@@ -66,6 +67,8 @@ const PurchageDetails = () => {
 
             </div>
           </div>
+          <RelatedProducts />
+
         </div>
 
         <div className='col-3'>

@@ -1,6 +1,7 @@
 'use client'
 import React from 'react';
 import './style.css';
+import GreyLine from '../greyLine';
 
 const FillPrice = () => {
   const handleChange = () =>{
@@ -9,7 +10,7 @@ const FillPrice = () => {
   return (
     <div>
       <div className="filter-card bg-white">
-        <div className="filter-title">Fill by price</div>
+      <GreyLine title="Fill by price" />
 
         <div className="range-values">
           <span>From: $500</span>
