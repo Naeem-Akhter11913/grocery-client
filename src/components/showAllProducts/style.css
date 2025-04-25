@@ -1,0 +1,82 @@
+
+
+.main-container:hover .left-rigth-arrow {
+    display: inline;
+}
+
+
+.show-image-container {
+    display: flex;
+    gap: 12px;
+    width: 28rem;
+    overflow-x: hidden;
+    padding: 5px;
+
+}
+
+.show-image-container img {
+    height: 100px;
+    border-radius: 12px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.show-image-container img:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.img-active {
+    border: 1px solid green;
+    border-radius: 12px;
+
+}
+
+.left-rigth-arrow {
+    display: none;
+    position: relative;
+    width: 28rem;
+    height: 35px;
+}
+
+.left-rigth-arrow>div {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 35px;
+    width: 35px;
+    background-color: rgb(238, 237, 237);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left-rigth-arrow>div:first-child {
+    left: -10px;
+}
+
+.left-rigth-arrow>div:last-child {
+    right: -10px;
+}
+
+.left-rigth-arrow>div:hover {
+    background-color: green;
+    cursor: pointer;
+    color: white;
+}
+
+.image-container {
+    position: relative;
+}
+
+.left-rigth-arrow {
+    position: absolute;
+    left: 0px;
+    top: 56px;
+    transform: translateY(-50%);
+}
+
+.image img{
+    width: 28rem;
+    border: none;
+}

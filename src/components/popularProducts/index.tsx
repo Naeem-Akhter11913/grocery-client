@@ -4,6 +4,7 @@ import './style.css';
 import { ProductItem } from '@/utils/types';
 import { CartIcon, Compare, WishList, View } from '@/utils/Arrows';
 import { productsItems } from './productsArray';
+import Link from 'next/link';
 
 const PopularProducts = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
@@ -11,7 +12,7 @@ const PopularProducts = () => {
   return (
       <div className="d-flex flex-wrap gap-3 justify-content-center">
         {items.map((item, index) => (
-          <div className="" key={index}>
+          <div key={index}>
             <div
               className="card shadow-sm position-relative custom-cart-hover-effect position-relative-custom"
               onMouseEnter={() => setHoveredIndex(index)}
@@ -44,7 +45,7 @@ const PopularProducts = () => {
 
               <div className="card-body">
                 <p className="text-muted text-muted-custom mb-1">{item.type}</p>
-                <h5 className="card-title"><a href="#" className='text-decoration text-decoration-none'>{item.desc}</a></h5>
+                <h5 className="card-title"> <Link href={`/product-details/${item.type}`} className="text-decoration-none" key={index}>{item.desc}</Link></h5>
 
                 <div className="mb-2">
                   <span className="text-warning">{'★'.repeat(item.stars)}</span>

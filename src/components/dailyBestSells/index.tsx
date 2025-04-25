@@ -35,9 +35,9 @@ const DailyBestSells = () => {
 
 
   return (
-    <div className='row mx-2 mt-3' style={{ height: '479px' }}>
+    <div className='row mx-2 mt-3'>
       <div className='col-3'>
-        <div className='cover-bg-image p-2'>
+        <div className='cover-bg-image p-3'>
           <div className='daily-best-sale-text d-flex gap-5 flex-column mt-5'>
             <h1>Bring nature into your home</h1>
             <button type='button' className='mt-5'>Shop Now <span><RightArrow /></span></button>

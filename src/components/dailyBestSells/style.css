@@ -38,11 +38,14 @@ h2 {
 
 .cover-bg-image {
   background-image: url('/daily-best-sells/banner-4.png');
-  background-size: contain;
+  background-size: contain; /* Show the full image */
   background-repeat: no-repeat;
-  height: 470px;
+  background-position: center;
+  padding: 0;
+  height: 499px;
   border-radius: 10px;
-  object-fit: fill;
+  object-fit: contain;
+  margin-top: 15px;
 }
 
 .daily-best-sale-text button {
@@ -87,4 +90,15 @@ h2 {
   height: 500px; /* ✅ Fixed height */
   overflow: hidden; /* Optional: hide any overflow */
   border: 1px solid green;
+}
+.slick-prev {
+  left: 14px !important;
+  z-index: 9999 !important;
+  background-color: red !important;
+}
+
+.slick-next {
+  right: 17px !important;
+  z-index: 9999 !important;
+  background-color: red !important;
 }

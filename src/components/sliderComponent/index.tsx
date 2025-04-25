@@ -1,5 +1,6 @@
 import React from 'react'
 import './style.css';
+import '../heroSlider/style.css'
 
 
 const SliderComponent = () => {
