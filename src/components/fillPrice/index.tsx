@@ -9,7 +9,7 @@ const FillPrice = () => {
   }
   return (
     <div>
-      <div className="filter-card bg-white">
+      <div className="shadow-sm rounded-4 p-4">
       <GreyLine title="Fill by price" />
 
         <div className="range-values">
@@ -17,6 +17,7 @@ const FillPrice = () => {
           <span>To: $1,000</span>
         </div>
         <input onChange={handleChange} type="range" className="form-range mb-3" min="0" max="1000" value="500" />
+        
 
         <div className="mb-3">
           <strong>Color</strong>

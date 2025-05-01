@@ -8,6 +8,7 @@ import ProductReview from '@/components/productReviews';
 import RelatedProducts from '@/components/relatedProducts';
 import ServiceProvide from '@/components/service-provide/ServiceProvide';
 import ShowAllProducts from '@/components/showAllProducts';
+import SideBanner from '@/components/sideBanner';
 import SliderComponent from '@/components/sliderComponent';
 import AdditionalInfo from '@/components/specsTable';
 import VendorDetails from '@/components/vendor';
@@ -38,7 +39,7 @@ const PurchageDetails = () => {
 
   return (
     <div>
-      <div className='row mx-5'>
+      <div className='row mx-5 my-3'>
         <div className='col-9'>
           <div className='d-flex gap-3'>
             <ShowAllProducts productArray={imgs} />
@@ -71,10 +72,11 @@ const PurchageDetails = () => {
 
         </div>
 
-        <div className='col-3'>
+        <div className='col-3 d-flex flex-column gap-3'>
           <CategoryCard />
           <FillPrice />
           <NewProducts />
+          <SideBanner />
         </div>
       </div>
       <SliderComponent />

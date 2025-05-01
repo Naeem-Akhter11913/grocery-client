@@ -5,11 +5,11 @@ import './style.css'
 import GreyLine from '../greyLine';
 
 const categories = [
-  { name: 'Milks & Dairies', count: 30, icon: '/icons/milk.png' },
-  { name: 'Clothing', count: 35, icon: '/icons/clothing.png' },
-  { name: 'Pet Foods', count: 42, icon: '/icons/pet.png' },
-  { name: 'Baking material', count: 68, icon: '/icons/baking.png' },
-  { name: 'Fresh Fruit', count: 4, icon: '/icons/fruit.png' },
+  { name: 'Milks & Dairies', count: 30, icon: '/category-cart/category-1.svg' },
+  { name: 'Clothing', count: 35, icon: '/category-cart/category-2.svg' },
+  { name: 'Pet Foods', count: 42, icon: '/category-cart/category-3.svg' },
+  { name: 'Baking material', count: 68, icon: '/category-cart/category-4.svg' },
+  { name: 'Fresh Fruit', count: 4, icon: '/category-cart/category-5.svg' },
 ];
 
 const CategoryCard = () => {
@@ -19,7 +19,7 @@ const CategoryCard = () => {
 
       {categories.map((cat, index) => (
         <div
-          className="d-flex align-items-center justify-content-between mb-3 p-2 rounded-3 border"
+          className="d-flex align-items-center justify-content-between mb-3 p-2 rounded-3 border cart-pills"
           key={index}
         >
           <div className="d-flex align-items-center">
@@ -27,7 +27,7 @@ const CategoryCard = () => {
               src={cat.icon}
               alt={cat.name}
               width={40}
-              height={40}
+              height={30}
               className="me-3"
             />
             <span className="fw-medium">{cat.name}</span>

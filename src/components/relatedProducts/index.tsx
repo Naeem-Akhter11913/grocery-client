@@ -1,7 +1,7 @@
 'use client'
 import React, { useEffect, useState } from "react";
 import '../popularProducts/style.css';
-import { CartIcon, Compare, View, WishList } from "@/utils/Arrows";
+import { Compare, View, WishList } from "@/utils/Arrows";
 import Link from "next/link";
 import { ProductItem } from "@/utils/types";
 import { productsItems } from "../popularProducts/productsArray";

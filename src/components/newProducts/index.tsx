@@ -10,19 +10,19 @@ interface Product {
 
 const products: Product[] = [
   {
-    image: "/images/juice.png", 
+    image: "/trending_product/thumbnail-1.jpg", 
     title: "Chen Cardigan",
     price: "$99.50",
     rating: 5,
   },
   {
-    image: "/images/banana.png",
+    image: "/trending_product/thumbnail-2.jpg",
     title: "Chen Sweater",
     price: "$89.50",
     rating: 4,
   },
   {
-    image: "/images/meat.png",
+    image: "/trending_product/thumbnail-3.jpg",
     title: "Colorful Jacket",
     price: "$25",
     rating: 3,
@@ -31,7 +31,7 @@ const products: Product[] = [
 
 const NewProducts = () => {
   return (
-    <div className="card p-3" style={{ width: "18rem" }}>
+    <div className="shadow-sm rounded-4 p-4">
       <GreyLine title="New products" />
       {products.map((product, index) => (
         <div key={index} className="d-flex align-items-center mb-3">

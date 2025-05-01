@@ -27,19 +27,21 @@ const ProductInfo = () => {
                 <div className="mb-3">
                     <strong>Size / Weight: </strong>
                     <div className="btn-group ms-2" role="group">
-                        <button className="btn btn-outline-secondary btn-sm">50g</button>
-                        <button className="btn btn-success btn-sm">60g</button>
-                        <button className="btn btn-outline-secondary btn-sm">80g</button>
-                        <button className="btn btn-outline-secondary btn-sm">100g</button>
-                        <button className="btn btn-outline-secondary btn-sm">150g</button>
+                        <button className="btn btn-outline-secondary btn-sm border-0">50g</button>
+                        <button className="btn btn-success btn-sm border-0">60g</button>
+                        <button className="btn btn-outline-secondary btn-sm border-0">80g</button>
+                        <button className="btn btn-outline-secondary btn-sm border-0">100g</button>
+                        <button className="btn btn-outline-secondary btn-sm border-0">150g</button>
                     </div>
                 </div>
 
                 <div className="d-flex align-items-center mb-4">
-                    <div className="input-group me-3" style={{ width: '100px' }}>
-                        <button className="btn btn-outline-secondary">-</button>
-                        <input type="text" className="form-control text-center" value="2" readOnly />
-                        <button className="btn btn-outline-secondary">+</button>
+                    <div className="input-group me-3 border border-success rounded" style={{ width: '100px', height:'40px'}}>
+                        <input type="text" className="form-control text-center  border-0" value="2" readOnly style={{height:'40px'}}/>
+                        <div className='d-flex flex-column'>
+                            <button className="btn py-0">+</button>
+                            <button className="btn py-0">-</button>
+                        </div>
                     </div>
                     <button className="btn btn-success px-4">🛒 Add to cart</button>
                     <button className="btn btn-outline-secondary mx-2">
