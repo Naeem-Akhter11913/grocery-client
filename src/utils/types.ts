@@ -3,7 +3,8 @@ import { ReactNode } from "react"
 export type naveType = {
     label: string,
     icon?: ReactNode,
-    dropdown: boolean
+    dropdown: boolean,
+    content?: string[]
 }
 
 export type CategoryItem = {
@@ -26,3 +27,9 @@ export type ProductItem = {
       currency: string;
     };
   };
+
+
+  export type hoverData= {
+    name:string,
+    url: string
+  }

@@ -4,10 +4,11 @@ import './style.css'
 import { ArrowDown, ArrowUp, Headset, LevelRows } from '@/utils/Arrows'
 import navContent from './middleContent'
 import { naveType } from '@/utils/types'
+import HoverComponent from '../nav-hover/HoverComponent'
 
 const ScondeNavebar = () => {
   const [navItems, setNavItems] = useState<naveType[]>([])
-  const [hoverIndex, setHoverIndex] = useState<number>(-1)
+  const [hoverIndex, setHoverIndex] = useState<number | null>(-1)
 
   useEffect(() => {
     if (navContent && Array.isArray(navContent)) {
@@ -27,18 +28,15 @@ const ScondeNavebar = () => {
 
       <div className='middle-content d-flex gap-4 align-items-center custom-gap'>
         {navItems.map((item, index) => (
-          <div
-            key={item.label}
-            className='d-flex align-items-center gap-1'
-            onMouseEnter={() => setHoverIndex(index)}
-            onMouseLeave={() => setHoverIndex(-1)}
-          >
-            {item.icon && item.icon}
-            <span className='middle-font-size'>{item.label}</span>
-            {item.dropdown && (hoverIndex === index ? <ArrowUp /> : <ArrowDown />)}
-
-          </div>
+          <HoverComponent
+            key={index}
+            item={item}
+            index={index}
+            setHoverIndex={setHoverIndex}
+            hoverIndex={hoverIndex}
+          />
         ))}
+
       </div>
 
       <div className='rigth-content d-flex align-items-center'>
