@@ -6,7 +6,7 @@ const BlogAuth = () => {
             <div className="border rounded-4 p-4 d-flex align-items-start shadow-sm" style={{ backgroundColor: "#fff" }}>
 
                 <img
-                    src="/author.jpg"
+                    src="https://wp.alithemes.com/html/nest/demo/assets/imgs/blog/author-1.png"
                     alt="Barbara Cartland"
                     className="rounded-circle me-4"
                     style={{ width: "70px", height: "70px", objectFit: "cover" }}

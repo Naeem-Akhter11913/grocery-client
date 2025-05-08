@@ -15,7 +15,7 @@ const BlogDetails = () => {
 
                 {/* Hero Image */}
                 <div className="my-4">
-                    <img src="/meat.jpg" alt="Meat preparation" className="img-fluid rounded" />
+                    <img src="https://wp.alithemes.com/html/nest/demo/assets/imgs/blog/blog-19.png" alt="Meat preparation" className="img-fluid rounded" />
                 </div>
 
                 {/* Intro Text */}
@@ -36,10 +36,10 @@ const BlogDetails = () => {
                 {/* Side-by-side Images */}
                 <div className="row my-4">
                     <div className="col-md-6 mb-3 mb-md-0">
-                        <img src="/chef.jpg" alt="Chef Cooking" className="img-fluid rounded" />
+                        <img src="https://wp.alithemes.com/html/nest/demo/assets/imgs/blog/blog-21.png" alt="Chef Cooking" className="img-fluid rounded" />
                     </div>
                     <div className="col-md-6">
-                        <img src="/breakfast.jpg" alt="Healthy Breakfast" className="img-fluid rounded" />
+                        <img src="https://wp.alithemes.com/html/nest/demo/assets/imgs/blog/blog-21.png" alt="Healthy Breakfast" className="img-fluid rounded" />
                     </div>
                 </div>
 
