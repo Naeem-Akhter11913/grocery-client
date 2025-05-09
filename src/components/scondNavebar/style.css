@@ -23,3 +23,17 @@
 .custom-gap{
     gap: 38px !important;
 }
+
+.custom-second-padding {
+  transition: top 0.3s ease-in-out;
+  top: -200px;
+}
+
+.fixed-navbar {
+  position: fixed;
+  z-index: 2;
+  top: -20px;
+  transition: top 0.3s ease-in-out;
+  opacity: 1;
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+}

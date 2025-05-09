@@ -1,5 +1,5 @@
 'use client'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import './style.css'
 import { ArrowDown, ArrowUp, Headset, LevelRows } from '@/utils/Arrows'
 import navContent from './middleContent'
@@ -8,16 +8,42 @@ import HoverComponent from '../nav-hover/HoverComponent'
 
 const ScondeNavebar = () => {
   const [navItems, setNavItems] = useState<naveType[]>([])
-  const [hoverIndex, setHoverIndex] = useState<number | null>(-1)
+  const [hoverIndex, setHoverIndex] = useState<number | null>(-1);
+
+  const detectDOMHeight = useRef<HTMLDivElement>(null)
+  const [isInView, setIsInView] = useState<boolean>(false);
+
 
   useEffect(() => {
     if (navContent && Array.isArray(navContent)) {
       setNavItems([...navContent])
     }
-  }, [])
+  }, []);
+
+
+  useEffect(() => {
+    let lastScrollTop = window.scrollY || document.documentElement.scrollTop;
+
+    const handleScroll = () => {
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+
+      if (scrollTop > 150) {
+        setIsInView(true);
+      }
+      if(scrollTop === 0) setIsInView(false)
+
+      lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
 
   return (
-    <div className='d-flex justify-content-between border border-1 px-2 mt-3 custom-second-padding'>
+    <div className={`d-flex justify-content-between border w-100 bg-white border-1 px-2 mt-3 mb-3 custom-second-padding ${isInView ? 'fixed-navbar':''}`} ref={detectDOMHeight}>
       <div className='left-content d-flex align-items-center'>
         <button className='btn btn-success'>
           <LevelRows />
