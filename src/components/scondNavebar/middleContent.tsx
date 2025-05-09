@@ -86,6 +86,7 @@ const navItems = [
   {
     label: 'Contact',
     dropdown: false,
+    page: '/contact'
   },
 ];
 
