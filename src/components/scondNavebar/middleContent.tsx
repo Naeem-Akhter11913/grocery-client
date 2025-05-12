@@ -85,7 +85,7 @@ const navItems = [
     content: [
       { url: '/about-us', name: 'About us' },
       { url: '/contact', name: 'Contact' },
-      { url: '/my-account', name: 'My Account' },
+      { url: '/dashboard', name: 'My Account' },
       { url: '/login', name: 'Login' },
       { url: '/register', name: 'Register' },
       { url: '/forget-password', name: 'Forget Password' },
