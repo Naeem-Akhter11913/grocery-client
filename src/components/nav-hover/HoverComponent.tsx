@@ -39,8 +39,8 @@ const HoverComponent: FC<Props> = ({ item, index, setHoverIndex, hoverIndex }) =
       {item.dropdown && isHovered && item.content && (
         <div className="hover-list position-absolute bg-white shadow-sm p-2 rounded">
           <ul className="list-unstyled m-0">
-            {item.content.map((contentItem, idx) => (
-              <li key={idx}>{contentItem}</li>
+            {item.content.map(({url,name}, idx) => (
+              <li key={idx}><Link href={url}>{name}</Link> </li>
             ))}
           </ul>
         </div>
