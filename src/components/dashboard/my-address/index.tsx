@@ -1,35 +1,107 @@
-import React from 'react'
+import React, { useState } from 'react';
+import EditAddressModal from './components/EditAddressModal'
+import { Button } from 'react-bootstrap';
+import { detailsTypes } from './type';
 
 const MyAddress = () => {
+  const [billingAddress, setAddressFirst] = useState<detailsTypes[]>([
+    {
+      name: "addressLine1",
+      value: "3522 Interstate",
+      placeholder: "Enter street address (e.g., 3522 Interstate)",
+    },
+    {
+      name: "addressLine2",
+      value: "75 Business Spur,",
+      placeholder: "Enter apartment, suite, unit, etc.",
+    },
+    {
+      name: "cityLine1",
+      value: "Sault Ste.",
+      placeholder: "Enter city name (e.g., Sault Ste.)",
+    },
+    {
+      name: "cityLine2",
+      value: "Marie, MI 49783",
+      placeholder: "Enter district or ZIP (e.g., Marie, MI 49783)",
+    },
+    {
+      name: "State",
+      value: "New York",
+      placeholder: "Enter state or province (e.g., New York)",
+    },
+  ]);
+
+  const [shippingAddress, setAddressSecond] = useState<detailsTypes[]>([
+    {
+      name: "Address Line 1",
+      value: "3522 Interstate",
+      placeholder: "Enter street address (e.g., 3522 Interstate)",
+    },
+    {
+      name: "Address Line 2",
+      value: "75 Business Spur,",
+      placeholder: "Enter apartment, suite, unit, etc.",
+    },
+    {
+      name: "City Line 1",
+      value: "Sault Ste.",
+      placeholder: "Enter city name (e.g., Sault Ste.)",
+    },
+    {
+      name: "City Line 2",
+      value: "Marie, MI 49783",
+      placeholder: "Enter district or ZIP (e.g., Marie, MI 49783)",
+    },
+    {
+      name: "State",
+      value: "New York",
+      placeholder: "Enter state or province (e.g., New York)",
+    },
+  ]);
+
+  const [modalState, setModalState] = useState<{ closed: boolean; opened: boolean; editType: string; formData: detailsTypes[] }>({ closed: true, opened: false, editType: '', formData: [] })
+
+  const handleOpenModal = (detailsData: detailsTypes[], editType: string) => {
+    setModalState((prev) => ({ ...prev, formData: detailsData, opened: true, closed: false, editType }));
+  }
+
+  const closeModal = () => {
+    setModalState(prev => ({ ...prev, closed: true, opened: false }));
+
+  }
+
   return (
     <div className="">
       <div className="d-flex flex-column flex-md-row justify-content-around gap-1">
-        {/* Billing Address */}
         <div>
           <h4 className="fw-bold mb-3">Billing Address</h4>
-          <p className="text-muted mb-1">3522 Interstate</p>
-          <p className="text-muted mb-1">75 Business Spur,</p>
-          <p className="text-muted mb-1">Sault Ste.</p>
-          <p className="text-muted mb-1">Marie, MI 49783</p>
-          <p className="text-muted mb-1">New York</p>
-          <a href="#" className="text-success text-decoration-none fw-normal">
+
+          {billingAddress.map((item, index) => (
+            <div className="mb-1 lh-1" key={index}>
+              <p className='fs-5' >{item.placeholder}</p>
+              <p className='text-muted'>{item.value}</p>
+            </div>
+          ))}
+          <Button className="btn btn-success" onClick={() => handleOpenModal(billingAddress, 'Billing Address')}>
             Edit
-          </a>
+          </Button>
         </div>
 
-        {/* Shipping Address */}
         <div>
           <h4 className="fw-bold mb-3">Shipping Address</h4>
-          <p className="text-muted mb-1">4299 Express Lane</p>
-          <p className="text-muted mb-1">Sarasota,</p>
-          <p className="text-muted mb-1">FL 34249 USA</p>
-          <p className="text-muted mb-1">Phone: 1.941.227.4444</p>
-          <p className="text-muted mb-1">Sarasota</p>
-          <a href="#" className="text-success text-decoration-none fw-normal">
+          {shippingAddress.map((item, index) => (
+            <div className='mb-1 lh-1' key={index}>
+              <p className='fs-5'>{item.placeholder}</p>
+              <p className='text-muted'>{item.value}</p>
+            </div>
+          ))}
+          <Button className="btn btn-success" onClick={() => handleOpenModal(shippingAddress, 'Shipping Address')}>
             Edit
-          </a>
+          </Button>
         </div>
       </div>
+      {modalState.opened && <EditAddressModal closeModal={closeModal} modalState={modalState} updateState={setModalState} />}
     </div>
   )
 }

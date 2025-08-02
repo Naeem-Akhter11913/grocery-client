@@ -40,7 +40,7 @@ const HoverComponent: FC<Props> = ({ item, index, setHoverIndex, hoverIndex }) =
         <div className="hover-list position-absolute bg-white shadow-sm p-2 rounded">
           <ul className="list-unstyled m-0">
             {item.content.map(({url,name}, idx) => (
-              <li key={idx}><Link href={url}>{name}</Link> </li>
+              <li key={idx}><Link href={url} className='text-decoration-non'>{name}</Link> </li>
             ))}
           </ul>
         </div>

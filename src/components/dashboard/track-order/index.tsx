@@ -1,6 +1,7 @@
 import React from 'react'
 
 const TrackOrder = () => {
+  console.log('order track')
   return (
     <div className="container my-5">
         <h2 className="fw-bold mb-3">Orders tracking</h2>

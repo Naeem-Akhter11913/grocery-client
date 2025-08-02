@@ -30,7 +30,7 @@ const DailyBestSells = () => {
       }
     }, 0);
 
-    return () => clearTimeout(timeout); // Clean up on component unmount
+    return () => clearTimeout(timeout); // Clean up component on unmount
   }, []);
 
 

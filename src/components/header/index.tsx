@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { useState } from 'react';
 import './style.css';
 import { ArrowDown } from '@/utils/Arrows';
+import Link from 'next/link';
 
 const Header = () => {
   const [searchText, setSearchText] = useState('');
@@ -51,10 +52,10 @@ const Header = () => {
         ))}
 
         {/* Account */}
-        <div className="text-center">
+        <Link href={'/dashboard'} className="text-center text-decoration-none">
           <Image src="/navebar/icon-user.svg" alt="Account" width={24} height={24} />
           <span className="small-text mt-1 header-font-size">Account</span>
-        </div>
+        </Link>
       </div>
     </header>
   );

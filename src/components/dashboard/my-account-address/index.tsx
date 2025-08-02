@@ -1,6 +1,18 @@
-import React from 'react'
+import React , {useEffect, useRef} from 'react'
 
 const MyAccount = () => {
+
+  const formRef = useRef(null);
+
+  // useEffect(() => {
+  //   window.addEventListener('DOMContentLoaded',() =>{
+  //     const spanTag = formRef.current;
+  //     console.log(spanTag)
+  //   })
+  // }, [])
+
+  console.log('my account')
+  
   return (
     <div className="container my-5">
       <h5 className="fw-bold mb-3">Account Details</h5>
@@ -12,7 +24,7 @@ const MyAccount = () => {
         </a>
       </p>
 
-      <form>
+      <form ref={formRef}>
         {/* First & Last Name */}
         <div className="d-flex flex-column flex-md-row gap-3 mb-3">
           <div className="flex-fill">

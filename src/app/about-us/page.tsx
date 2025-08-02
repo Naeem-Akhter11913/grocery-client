@@ -1,16 +1,13 @@
 'use client'
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
-import $ from '@/utils/jquery'
-import 'slick-carousel';
-import 'slick-carousel/slick/slick.css'
-import 'slick-carousel/slick/slick-theme.css'
 import AboutUsDesc from '@/components/about-us/desc/AboutUsDesc';
-import WeProvide from '@/components/about-us/we-provide/WeProvide';
+const WeProvide = dynamic(() => import('@/components/about-us/we-provide/WeProvide'), { ssr: false });
 import { offercType } from '@/utils/types';
 import OurPerformance from '@/components/about-us/our-performance/OurPerformance';
 import StatsSection from '@/components/about-us/stats-section/StatsSection';
 import TeamSection from '@/components/about-us/team-section/TeamSection';
+import dynamic from 'next/dynamic';
 
 
 const AboutUsPage = () => {
@@ -59,24 +56,8 @@ const AboutUsPage = () => {
     }]
   );
 
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      if ($('.slick-carousel').length > 0) {
-        $('.slick-carousel').slick({
-          slidesToShow: 3,
-          dots: false,
-          centerMode: true,
-          autoplay: true,
-          autoplaySpeed: 3000,
-          speed: 1000,
-          cssEase: 'ease-in-out',
-          infinite: true
-        });
-      }
-    }, 100);
 
-    return () => clearTimeout(timeout); // Clean up on component unmount
-  }, []);
+
   return (
     <>
       <AboutUsDesc images={images} />

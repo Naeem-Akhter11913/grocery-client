@@ -1,46 +1,4 @@
-// import { Fire } from "@/utils/Arrows";
 
-// const navItems = [
-//   {
-//     label: 'Deal',
-//     icon: <Fire />,
-//     dropdown: false,
-//     content:[]
-//   },
-//   {
-//     label: 'Home',
-//     dropdown: true,
-//   },
-//   {
-//     label: 'About',
-//     dropdown: false,
-//   },
-//   {
-//     label: 'Shop',
-//     dropdown: true,
-//   },
-//   {
-//     label: 'Vendors',
-//     dropdown: true,
-//   },
-//   {
-//     label: 'Mega Menu',
-//     dropdown: true,
-//   },
-//   {
-//     label: 'Blog',
-//     dropdown: true,
-//   },
-//   {
-//     label: 'Pages',
-//     dropdown: true,
-//   },
-//   {
-//     label: 'Contact',
-//     dropdown: false,
-//   },
-// ]
-// export default navItems;
 import { Fire } from "@/utils/Arrows";
 
 const navItems = [
@@ -76,7 +34,7 @@ const navItems = [
   {
     label: 'Blog',
     dropdown: true,
-    content: [{ url: "#", name: 'Latest Posts' }, { url: "#", name: 'Categories' }, { url: "#", name: 'Archives' }],
+    content: [{ url: "/all-blogs", name: 'Latest Posts' }, { url: "#", name: 'Categories' }, { url: "#", name: 'Archives' }],
   },
   {
     label: 'Pages',

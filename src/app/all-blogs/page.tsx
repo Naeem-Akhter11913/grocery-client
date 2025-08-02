@@ -15,7 +15,7 @@ const AllBlogs = () => {
                         return (
                             <Link href={`/blog-details/${index + 1}`} key={index} className="card border-0 text-center text-decoration-none" style={{ width: "20rem", margin: "auto" }}>
                                 <div className="position-relative rounded-4 overflow-hidden">
-                                    <img src="https://wp.alithemes.com/html/nest/demo/assets/imgs/blog/blog-1.png" className="img-fluid w-100" alt="Healthy Food" />
+                                    <img src="/blog/blog-1.png" className="img-fluid w-100" alt="Healthy Food" />
 
                                     <div className="position-absolute top-0 start-0 m-2 bg-white rounded-circle p-1">
                                         <i className="bi bi-heart-fill text-warning"></i>
