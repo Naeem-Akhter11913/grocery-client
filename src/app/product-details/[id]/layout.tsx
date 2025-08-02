@@ -1,4 +1,8 @@
 import React from 'react';
+import productDetails from '../seo';
+
+export const metadata = productDetails;
+
 
 export default function ProductLayout({
   children,

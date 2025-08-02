@@ -1,11 +1,12 @@
 'use client'
-import React, { JSX, useState } from 'react'
+import React, { JSX, useEffect, useState } from 'react'
 import DashboadContent from '@/components/dashboard/dashboard-content';
 import MyAccount from '@/components/dashboard/my-account-address';
 import MyAddress from '@/components/dashboard/my-address';
 import Order from '@/components/dashboard/order';
 import TrackOrder from '@/components/dashboard/track-order';
 import './style.css'
+import Head from 'next/head';
 
 type TabType = 'dashboard' | 'my-account' | 'my-address' | 'order' | 'track-order';
 
@@ -24,7 +25,24 @@ const DashboardPage = () => {
     setTabType(tab);
   }
 
+   useEffect(() => {
+    // const titleMap: Record<TabType, string> = {
+    //   dashboard: 'User Dashboard',
+    //   order: 'My Orders',
+    //   'track-order': 'Track My Orders',
+    //   'my-address': 'My Addresses',
+    //   'my-account': 'Account Settings',
+    // };
+    // document.title = `Dashboad - ${titleMap[tabType]}`;
+    document.title = `Dashboard - ${tabType}`;
+  }, [tabType,]);
+
   return (
+    <>
+    <Head>
+      <title>{`Dashboard - ${tabType}`}</title>
+      <meta name="description" content={'Custon content'} />
+    </Head>
     <div className='main-container'>
       <div className="tab-container">
         <div className="tab-sum-container">
@@ -40,6 +58,7 @@ const DashboardPage = () => {
         </div>
       </div>
     </div>
+    </>
   )
 }
 

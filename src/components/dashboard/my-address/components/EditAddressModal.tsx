@@ -37,7 +37,7 @@ const EditAddressModal: React.FC<ModalTypes> = ({ closeModal, modalState, update
     }
 
 
-    const saveFormData = async() => {
+    const saveFormData = () => {
 
         const promise: Promise<string> = new Promise((res, rej) => {
             setLoading(true);

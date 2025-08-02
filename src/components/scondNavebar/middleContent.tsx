@@ -45,7 +45,7 @@ const navItems = [
       { url: '/contact', name: 'Contact' },
       { url: '/dashboard', name: 'My Account' },
       { url: '/login', name: 'Login' },
-      { url: '/register', name: 'Register' },
+      { url: '/registration', name: 'Register' },
       { url: '/forget-password', name: 'Forget Password' },
       { url: '/reset-password', name: 'Reset Password' },
       { url: '/purchase-guide', name: 'Purchase Guide' },

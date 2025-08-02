@@ -1,4 +1,7 @@
-import { ReactNode } from "react"
+import { ReactNode } from "react";
+import loginSEO from "./seo";
+
+export const metadata = loginSEO;
 
 const LoginLayout = ({children}: {children: ReactNode}) =>{
     return (
