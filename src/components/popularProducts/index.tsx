@@ -22,7 +22,8 @@ const PopularProducts: React.FC<{ filterType: string }> = ({ filterType }) => {
           Isotope = module.default;
           const isoInstance = new Isotope(isotopRef.current, {
             itemSelector: ".grid-item",
-            layoutMode: "fitRows",
+            // layoutMode: "fitRows",
+            // percentPosition: true,
           });
           setIsotopInstance(isoInstance);
         }
@@ -47,13 +48,14 @@ const PopularProducts: React.FC<{ filterType: string }> = ({ filterType }) => {
   }, [filterType, isotopInstance])
   
   return (
-    <div className="d-flex flex-wrap gap-3 justify-content-center grid" ref={isotopRef}>
+    <div className="grid" ref={isotopRef}>
       {items.map((item, index) => (
         <div key={index} className={`grid-item ${item.type} `}>
           <div
-            className="card shadow-sm position-relative custom-cart-hover-effect position-relative-custom"
+            className={`card shadow-sm position-relative custom-cart-hover-effect position-relative-custom`}
             onMouseEnter={() => setHoveredIndex(index)}
             onMouseLeave={() => setHoveredIndex(null)}
+            // style={{marginBlock:10}}
           >
             <span className="custom-badge bg-danger position-absolute top-0 start-0">
               {item.tag}

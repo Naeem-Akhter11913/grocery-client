@@ -116,11 +116,14 @@
     cursor: pointer;
 }
 
+
 .grid {
-  position: relative;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  overflow-y: hidden;
 }
 
-/* .grid-item {
-  width: 250px;
-  margin-bottom: 20px;
-} */
+.grid-item {
+  position: static !important; /* override Isotope's absolute positioning */
+}

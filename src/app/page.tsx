@@ -77,7 +77,7 @@ export default function Home() {
         <PopularProducts filterType={filterType} />
       </>
 
-      {/* <>
+    <div className="mt-3">
         <div className="d-flex justify-content-between mx-3 my-3">
           <h2>Daily Best Sells</h2>
           <ul className="d-flex gap-3 list-unstyled">
@@ -87,8 +87,8 @@ export default function Home() {
           </ul>
         </div>
         <DailyBestSells />
-      </>
-
+      </div>
+  {/* 
       <>
         <div className="d-flex justify-content-between mx-3 my-3">
           <h2>Deals Of The Day</h2>
