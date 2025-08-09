@@ -1,11 +1,51 @@
-import React, { FC } from 'react'
+'use client'
+import React, { FC, useEffect } from 'react'
 import './style.css';
 
 
 type Props = {
-  images: string[]|null
+  images: string[] | null
 }
 const AboutUsDesc: FC<Props> = ({ images }) => {
+
+  useEffect(() => {
+    // if (typeof window !== 'undefined') return ;
+    const interval = setTimeout(() => {
+      // @ts-ignore
+      if (typeof window !== 'undefined' && window.Swiper) {
+        // @ts-ignore
+        new window.Swiper('.slide-content-custom', {
+          slidesPerView: 4,
+          spaceBetween: 10,
+          loop: true,
+          centeredSlides: true,
+          grabCursor: true,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+            dynamicBullets: true,
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+          breakpoints: {
+            0: {
+              slidesPerView: 1,
+            },
+            520: {
+              slidesPerView: 2,
+            },
+            950: {
+              slidesPerView: 3,
+            },
+          },
+        });
+      }
+    }, 1000); // Delay initialization to ensure DOM is ready
+
+    return () => clearTimeout(interval);
+  }, []);
 
   return (
     <div className='container'>
@@ -19,11 +59,27 @@ const AboutUsDesc: FC<Props> = ({ images }) => {
 
             Ius ferri velit sanctus cu, sed at soleat accusata. Dictas prompta et Ut placerat legendos interpre.Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante Etiam sit amet orci eget. Quis commodo odio aenean sed adipiscing. Turpis massa tincidunt dui ut ornare lectus. Auctor elit sed vulputate mi sit amet. Commodo consequat. Duis aute irure dolor in reprehenderit in voluptate id est laborum.</p>
 
-          <div className="slick-carousel" >
+          {/* <div className="slick-carousel" >
             {images && images.map((url, index) => (
               <img src={url} height={300} key={index} />
             ))}
-          </div>
+          </div> */}
+<h1>Imapge slider will be added here later....</h1>
+          {/* <div className="slide-container-custom swiper">
+
+            <div className="slide-content-custom">
+              <div className="card-wrapper swiper-wrapper slick-carousel">
+                {images && images.map((url, index) => (
+                  <img src={url} height={300} key={index} />
+                ))}
+              </div>
+
+
+            </div>
+            <div className="swiper-button-next swiper-navBtn swiper-button-next-custom"></div>
+            <div className="swiper-button-prev swiper-navBtn swiper-button-prev-custom"></div>
+            <div className="swiper-pagination"></div>
+          </div> */}
         </div>
       </div>
     </div>

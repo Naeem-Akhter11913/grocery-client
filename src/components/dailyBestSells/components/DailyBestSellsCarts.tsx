@@ -1,3 +1,4 @@
+'use client'
 import React, { useState } from 'react'
 import { CartIcon, Compare, View, WishList } from '@/utils/Arrows'
 
@@ -28,7 +29,7 @@ const DailyBestSellsCarts: React.FC<DailyBestSellsCartsProps> = ({ item, index }
     return (
 
         <div
-            className="card shadow-sm position-relative custom-cart-hover-effect position-relative-custom"
+            className={`shadow-sm position-relative custom-cart-hover-effect position-relative-custom`}
             onMouseEnter={() => setHoveredIndex(index)}
             onMouseLeave={() => setHoveredIndex(null)}
             style={{ height: '500px', }}
@@ -89,4 +90,4 @@ const DailyBestSellsCarts: React.FC<DailyBestSellsCartsProps> = ({ item, index }
     )
 }
 
-export default DailyBestSellsCarts
+export default DailyBestSellsCarts;

@@ -115,3 +115,12 @@
     color: #3BB77E !important;
     cursor: pointer;
 }
+
+.grid {
+  position: relative;
+}
+
+/* .grid-item {
+  width: 250px;
+  margin-bottom: 20px;
+} */

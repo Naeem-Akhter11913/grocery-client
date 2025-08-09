@@ -1,4 +1,4 @@
-.wrapper {
+/* .wrapper {
   width: 100%;
   padding-top: 20px;
   text-align: center;
@@ -38,7 +38,7 @@ h2 {
 
 .cover-bg-image {
   background-image: url('/daily-best-sells/banner-4.png');
-  background-size: contain; /* Show the full image */
+  background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
   padding: 0;
@@ -61,7 +61,6 @@ h2 {
   text-align: start;
   transition: width 0.3s ease, background-color 0.3s ease;
   display: flex;
-  /* align-items:; */
 }
 
 .daily-best-sale-text button span {
@@ -69,12 +68,11 @@ h2 {
   transition: margin-left 0.3s ease;
 }
 
-/* Animate span on button hover */
 .daily-best-sale-text button:hover span {
   margin-left: 14px;
 }
 
-.daily-best-sale-text:hover h3{
+.daily-best-sale-text:hover h3 {
   transform: translateY(-5px);
   transition: transform 0.3s ease-in-out;
   cursor: pointer;
@@ -84,13 +82,15 @@ h2 {
   background-color: #FDC040;
   width: 135px;
 }
+
 .custom-heigth {
   position: relative !important;
   max-width: 306px;
-  height: 500px; /* ✅ Fixed height */
-  overflow: hidden; /* Optional: hide any overflow */
+  height: 500px;
+  overflow: hidden;
   border: 1px solid green;
 }
+
 .slick-prev {
   left: 14px !important;
   z-index: 9999 !important;
@@ -102,3 +102,5 @@ h2 {
   z-index: 9999 !important;
   background-color: red !important;
 }
+
+ */

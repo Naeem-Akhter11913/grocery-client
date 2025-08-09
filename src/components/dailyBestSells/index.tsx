@@ -1,38 +1,14 @@
 'use client'
 import React, { useEffect, useState } from 'react'
 import './style.css'
-import $ from '@/utils/jquery'
-import 'slick-carousel';
-import 'slick-carousel/slick/slick.css'
-import 'slick-carousel/slick/slick-theme.css'
-import { ProductItem } from '@/utils/types';
-import { dailySelsItems } from './components/json';
-import DailyBestSellsCarts from './components/DailyBestSellsCarts';
+// import $ from '@/utils/jquery'
+// import { ProductItem } from '@/utils/types';
+// import { dailySelsItems } from './components/json';
+// import DailyBestSellsCarts from './components/DailyBestSellsCarts';
 import { RightArrow } from '@/utils/Arrows';
+import DailyBestSellsCardSlider from './components/DailyBestSellsCardSlider';
 
 const DailyBestSells = () => {
-
-  const [items, setItems] = useState<ProductItem[] | []>([...dailySelsItems])
-
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      if ($('.slick-carousel').length > 0) {
-        $('.slick-carousel').slick({
-          slidesToShow: 3,
-          dots: false,
-          centerMode: true,
-          autoplay: true,
-          autoplaySpeed: 3000,
-          speed: 1000,
-          cssEase: 'ease-in-out',
-          infinite: true
-        });
-      }
-    }, 0);
-
-    return () => clearTimeout(timeout); // Clean up component on unmount
-  }, []);
-
 
   return (
     <div className='row mx-2 mt-3'>
@@ -43,11 +19,11 @@ const DailyBestSells = () => {
             <button type='button' className='mt-5'>Shop Now <span><RightArrow /></span></button>
           </div>
         </div>
-      </div>
+      </div> 
 
 
-      <div className="slick-carousel d-flex col-9">
-        {items.map((item, index) => (<DailyBestSellsCarts key={index} item={item} index={index} />))}
+      <div className="d-flex col-9">
+        <DailyBestSellsCardSlider />
       </div>
     </div>
   )

@@ -1,23 +1,4 @@
-.slick-slide{
-    padding: 5px;
-}
-
-.slick-slide img{
-    border-radius: 12px;
-}
-
-.img-fluid{
-    border-radius: 12px;
-}
-
-/* Google Fonts - Poppins */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
-/* *{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-} */
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
 .slide-container-custom{
   max-width: 1120px;
@@ -45,7 +26,29 @@
   row-gap: 5px;
   padding: 25px 0;
 }
-
+.overlay{
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #4070F4;
+  border-radius: 25px 25px 0 25px;
+}
+.overlay::before,
+.overlay::after{
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: -40px;
+  height: 40px;
+  width: 40px;
+  background-color: #4070F4;
+}
+.overlay::after{
+  border-radius: 0 25px 0 0;
+  background-color: #FFF;
+}
 .card-custom-image{
   position: relative;
   height: 150px;
@@ -109,12 +112,7 @@
 .swiper-pagination-bullet-active{
   background-color: #4070F4;
 }
-
-.swiper-button-prev-custom , .swiper-button-next-custom{
-    display: flex !important;
-    cursor: pointer !important;
-}
-/* @media screen and (max-width: 768px) {
+@media screen and (max-width: 768px) {
   .slide-content-custom{
     margin: 0 10px;
   }

@@ -1,7 +1,9 @@
-import React from 'react'
+'use client'
+import React, { useEffect } from 'react'
 import './style.css'
 
 const HeroSlider = () => {
+
   return (
     <div id="carouselExampleIndicators" className="carousel slide rounded-1" data-bs-ride="carousel">
       <div className="carousel-indicators">
