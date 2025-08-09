@@ -11,7 +11,7 @@ import dynamic from 'next/dynamic';
 
 
 const AboutUsPage = () => {
-  const [images, setImages] = useState<string[] | null>(['/about-us/about-2.png', '/about-us/about-4.png', '/about-us/about-3.png', '/about-us/about-4.png']);
+  const [images, setImages] = useState<string[] | null>([ '/about-us/about-4.png','/about-us/about-2.png', '/about-us/about-4.png', '/about-us/about-3.png', '/about-us/about-4.png','/about-us/about-4.png', '/about-us/about-4.png']);
   const [serviceImage, setServiceImage] = useState<offercType[]>([
     {
       icon: 'services-image/icon-1.svg',

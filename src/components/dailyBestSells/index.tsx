@@ -1,10 +1,6 @@
 'use client'
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import './style.css'
-// import $ from '@/utils/jquery'
-// import { ProductItem } from '@/utils/types';
-// import { dailySelsItems } from './components/json';
-// import DailyBestSellsCarts from './components/DailyBestSellsCarts';
 import { RightArrow } from '@/utils/Arrows';
 import DailyBestSellsCardSlider from './components/DailyBestSellsCardSlider';
 
@@ -22,7 +18,7 @@ const DailyBestSells = () => {
       </div> 
 
 
-      <div className="d-flex col-9">
+      <div className="col-9">
         <DailyBestSellsCardSlider />
       </div>
     </div>

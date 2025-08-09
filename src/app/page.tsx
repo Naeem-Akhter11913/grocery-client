@@ -14,17 +14,25 @@ import { CategoryItem } from "@/utils/types";
 // import TrendingProducts from "@/components/trending";
 // import SliderComponent from "@/components/sliderComponent";
 // import ServiceProvide from "@/components/service-provide/ServiceProvide";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { homeItems } from "./items";
+import { productsItems } from "@/components/popularProducts/productsArray";
 
 export default function Home() {
 
   const [items, setItems] = useState<CategoryItem[]>([...homeItems]);
-  const [filterType,setFilteType] = useState('*')
+  const [filterType, setFilteType] = useState('*');
+  const [filterKeys, setFilterKeys] = useState<string[]>([]);
 
-  function handleFilter(filterType: string){
+  function handleFilter(filterType: string) {
     setFilteType(filterType);
   }
+
+  useEffect(() => {
+    if (productsItems.length) {
+      setFilterKeys(Array.from(new Set(productsItems.map(({ type }) => type))));
+    }
+  }, [])
 
   return (
     <>
@@ -50,34 +58,21 @@ export default function Home() {
         <div className="d-flex justify-content-between align-items-center  mx-4 my-4">
           <h3>Popular Products</h3>
           <ul className="d-flex justify-content-between align-items-center gap-4 list-unstyled popular-custom-style">
+
+
             <li className="" onClick={() => handleFilter('*')}>
               All
             </li>
-            <li className="" onClick={() => handleFilter('Milks_Dairies')}>
-              Milks &amp; Dairies
-            </li>
-            <li className="" onClick={() => handleFilter('Coffees_Teas')}>
-              Coffes &amp; Teas
-            </li>
-            <li className="" onClick={() => handleFilter('Pet_Foods')}>
-              Pet Foods
-            </li>
-            <li className="" onClick={() => handleFilter('Meats')}>
-              Meats
-            </li>
-            <li className="" onClick={() => handleFilter('Vegetables')}>
-              Vegetables
-            </li>
-            <li className="" onClick={() => handleFilter('Fruits')}>
-              Fruits
-            </li>
+            {filterKeys.map((keys) => <li key={keys} className="" onClick={() => handleFilter(keys)}>
+              {keys}
+            </li>)}
           </ul>
         </div>
 
         <PopularProducts filterType={filterType} />
       </>
 
-    <div className="mt-3">
+      <div className="mt-3">
         <div className="d-flex justify-content-between mx-3 my-3">
           <h2>Daily Best Sells</h2>
           <ul className="d-flex gap-3 list-unstyled">
@@ -88,8 +83,8 @@ export default function Home() {
         </div>
         <DailyBestSells />
       </div>
-  {/* 
-      <>
+
+      {/* <>
         <div className="d-flex justify-content-between mx-3 my-3">
           <h2>Deals Of The Day</h2>
           <p>All See <ChevronRight /></p>
@@ -107,7 +102,7 @@ export default function Home() {
 
       <>
         <ServiceProvide />
-      </> */}
+      </>  */}
     </>
   );
 }

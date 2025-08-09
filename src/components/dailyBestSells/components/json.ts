@@ -42,6 +42,20 @@ export const dailySelsItems= [
       }
     },
     {
+      tag: "New",
+      type: "Beverage",
+      frontImage: '/popular-products/product-2-1.jpg',
+      backImage: '/popular-products/product-2-2.jpg',
+      desc: "Peach Organic Sparkling Water",
+      stars: 4.5,
+      brand: "FreshFizz",
+      price: {
+        current: 12.99,
+        original: 15.0,
+        currency: "$"
+      }
+    },
+    {
       tag: "Best Seller",
       type: "Snack",
       frontImage: '/popular-products/product-4-1.jpg',
@@ -52,6 +66,20 @@ export const dailySelsItems= [
       price: {
         current: 22.0,
         original: 25.0,
+        currency: "$"
+      }
+    },
+    {
+      tag: "New",
+      type: "Beverage",
+      frontImage: '/popular-products/product-2-1.jpg',
+      backImage: '/popular-products/product-2-2.jpg',
+      desc: "Peach Organic Sparkling Water",
+      stars: 4.5,
+      brand: "FreshFizz",
+      price: {
+        current: 12.99,
+        original: 15.0,
         currency: "$"
       }
     },
@@ -70,6 +98,20 @@ export const dailySelsItems= [
       }
     },
     {
+      tag: "New",
+      type: "Beverage",
+      frontImage: '/popular-products/product-2-1.jpg',
+      backImage: '/popular-products/product-2-2.jpg',
+      desc: "Peach Organic Sparkling Water",
+      stars: 4.5,
+      brand: "FreshFizz",
+      price: {
+        current: 12.99,
+        original: 15.0,
+        currency: "$"
+      }
+    },
+    {
       tag: "Organic",
       type: "Grain",
       frontImage: '/popular-products/product-6-1.jpg',
@@ -82,5 +124,18 @@ export const dailySelsItems= [
         original: 10.0,
         currency: "$"
       }
-    }
+    },{
+      tag: "New",
+      type: "Beverage",
+      frontImage: '/popular-products/product-2-1.jpg',
+      backImage: '/popular-products/product-2-2.jpg',
+      desc: "Peach Organic Sparkling Water",
+      stars: 4.5,
+      brand: "FreshFizz",
+      price: {
+        current: 12.99,
+        original: 15.0,
+        currency: "$"
+      }
+    },
 ]

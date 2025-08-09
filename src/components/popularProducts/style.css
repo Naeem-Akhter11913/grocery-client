@@ -123,6 +123,9 @@
   gap: 20px;
   overflow-y: hidden;
 }
+.grid-tall {
+  height: 949.4px !important; /* works here */
+}
 
 .grid-item {
   position: static !important; /* override Isotope's absolute positioning */

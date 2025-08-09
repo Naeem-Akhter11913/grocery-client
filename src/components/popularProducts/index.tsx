@@ -34,7 +34,7 @@ const PopularProducts: React.FC<{ filterType: string }> = ({ filterType }) => {
     };
   }, []);
 
-  
+
 
 
   useEffect(() => {
@@ -44,18 +44,17 @@ const PopularProducts: React.FC<{ filterType: string }> = ({ filterType }) => {
         : isotopInstance.arrange({ filter: `.${filterType}` });
     }
 
-
   }, [filterType, isotopInstance])
-  
+
   return (
-    <div className="grid" ref={isotopRef}>
-      {items.map((item, index) => (
+    <div className={`grid ${filterType === '*' ? 'grid-tall' : ''}`} ref={isotopRef}>
+      {items.slice(0,10).map((item, index) => (
         <div key={index} className={`grid-item ${item.type} `}>
           <div
             className={`card shadow-sm position-relative custom-cart-hover-effect position-relative-custom`}
             onMouseEnter={() => setHoveredIndex(index)}
             onMouseLeave={() => setHoveredIndex(null)}
-            // style={{marginBlock:10}}
+          // style={{marginBlock:10}}
           >
             <span className="custom-badge bg-danger position-absolute top-0 start-0">
               {item.tag}
@@ -84,7 +83,9 @@ const PopularProducts: React.FC<{ filterType: string }> = ({ filterType }) => {
 
             <div className="card-body">
               <p className="text-muted text-muted-custom mb-1">{item.type}</p>
-              <h5 className="card-title"> <Link href={`/product-details/${item.type}`} className="text-decoration-none" key={index}>{item.desc}</Link></h5>
+              <h5 className="card-title"> <Link href={`/product-details/${item.type}`} className="text-decoration-none" key={index}>{item.desc.length > 15
+                ? `${item.desc.slice(0, 15)}...`
+                : item.desc}</Link></h5>
 
               <div className="mb-2">
                 <span className="text-warning">{'★'.repeat(item.stars)}</span>
