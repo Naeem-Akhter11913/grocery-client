@@ -12,7 +12,9 @@ const Header = () => {
     <header className="d-flex justify-content-between align-items-center py-2 px-2">
       {/* Logo */}
       <div className="d-flex align-items-center">
-        <Image src="/navebar/logo.svg" alt="Nest Logo" width={130} height={40} />
+        <Link href={'/'}>
+          <Image src="/navebar/logo.svg" alt="Nest Logo" width={130} height={40} />
+        </Link>
       </div>
 
       {/* Search Bar */}
@@ -41,7 +43,7 @@ const Header = () => {
           { icon: '/navebar/icon-compare.svg', label: 'Compare', count: 3 },
           { icon: '/navebar/icon-heart.svg', label: 'Wishlist', count: 3 },
           { icon: '/navebar/icon-cart.svg', label: 'Cart', count: 2 },
-        ].map((item , index) => (
+        ].map((item, index) => (
           <div key={item.label} className="position-relative text-center">
             <Image src={item.icon} alt={item.label} width={24} height={24} />
             <span className={`badge-count position-absolute top-0 start-100 translate-middle-${index}`}>
