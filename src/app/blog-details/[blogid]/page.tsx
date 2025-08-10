@@ -1,15 +1,19 @@
 'use client'
-import BlogDetails from "@/components/blogDetails"
-import PostCommentReview from "@/components/blogDetails/addReview"
-import AllBlogComments from "@/components/blogDetails/AllComments"
-import BlogAuth from "@/components/blogDetails/blogAtuh"
-import CategoryCard from "@/components/categoryCard"
-import FillPrice from "@/components/fillPrice"
-import NewProducts from "@/components/newProducts"
-import SideBanner from "@/components/sideBanner"
-import { useEffect, useRef, useState } from "react";
 
+import { Suspense, useEffect, useRef, useState } from "react";
+import dynamic from "next/dynamic";
 import './style.css'
+
+import Loader from "@/components/loader/loader";
+const BlogDetails = dynamic(() => import("@/components/blogDetails"), { ssr: false, loading: () => <Loader /> });
+const PostCommentReview = dynamic(() => import("@/components/blogDetails/addReview"), { ssr: false, loading: () => <Loader /> });
+const AllBlogComments = dynamic(() => import("@/components/blogDetails/AllComments"), { ssr: false, loading: () => <Loader /> });
+const BlogAuth = dynamic(() => import("@/components/blogDetails/blogAtuh"), { ssr: false, loading: () => <Loader /> });
+const CategoryCard = dynamic(() => import("@/components/categoryCard"), { ssr: false, loading: () => <Loader /> });
+const FillPrice = dynamic(() => import("@/components/fillPrice"), { ssr: false, loading: () => <Loader /> });
+const NewProducts = dynamic(() => import("@/components/newProducts"), { ssr: false, loading: () => <Loader /> });
+const SideBanner = dynamic(() => import("@/components/sideBanner"), { ssr: false, loading: () => <Loader /> });
+
 
 
 const MainBlogDetails = () => {
@@ -39,7 +43,7 @@ const MainBlogDetails = () => {
     }, []);
 
     return (
-        <>
+        <Suspense fallback={<Loader />}>
             <div className="row">
                 <div className="col-9">
                     <BlogDetails />
@@ -48,7 +52,7 @@ const MainBlogDetails = () => {
                     <AllBlogComments />
                 </div>
 
-                <div className={`col-3 d-flex flex-column gap-3 ${isInView ? 'ssss':''}`}>
+                <div className={`col-3 d-flex flex-column gap-3 ${isInView ? 'ssss' : ''}`}>
                     <CategoryCard />
                     <FillPrice />
                     <NewProducts />
@@ -67,7 +71,7 @@ const MainBlogDetails = () => {
                 }
                 `}
             </style>
-        </>
+        </Suspense>
     )
 }
 

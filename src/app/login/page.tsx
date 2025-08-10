@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 import './style.css'
 import Link from 'next/link'
@@ -5,8 +6,6 @@ import Link from 'next/link'
 const Login = () => {
   return (
     <div className=" d-flex align-items-center justify-content-center my-5">
-      {/* <div className="row w-100 rounded overflow-hidden border border-success"> */}
-        {/* Left image */}
         <div className="col-lg-4 d-none d-lg-block p-0">
           <img
             src="auth/login-1.png"
@@ -15,7 +14,6 @@ const Login = () => {
           />
         </div>
 
-        {/* Right form */}
         <div className="col-lg-6 p-5 bg-white">
           <h2 className="fw-bold mb-3">Login</h2>
           <p className="mb-4">
@@ -71,7 +69,6 @@ const Login = () => {
             </button>
           </form>
         </div>
-      {/* </div> */}
     </div>
   )
 }

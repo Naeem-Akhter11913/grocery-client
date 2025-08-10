@@ -1,12 +1,19 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import './globals.css';
-import Header from "@/components/header";
 import 'react-toastify/dist/ReactToastify.css';
-import Footer from "@/components/footer";
-import ScondeNavebar from "@/components/scondNavebar";
-import { ToastContainer } from "react-toastify";
 import home from "./seo";
+import dynamic from "next/dynamic";
+import Loader from "@/components/loader/loader";
+import { Suspense } from "react";
+
+const Header = dynamic(() => import("@/components/header"),{loading:() => <Loader />})
+const Footer = dynamic(() => import('@/components/footer'), { loading: () => <Loader /> });
+const ScondeNavebar = dynamic(() => import("@/components/scondNavebar"), { loading: () => <Loader /> })
+
+
+import { ToastContainer } from "react-toastify";
+
 
 
 const geistSans = Geist({
@@ -30,14 +37,16 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossOrigin="anonymous" /> 
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossOrigin="anonymous" />
       </head>
       <body suppressHydrationWarning className={`${geistSans.variable} ${geistMono.variable}`}>
-        <Header />
-        <ScondeNavebar />
-        {children}
-        <Footer />
-        
+        <Suspense fallback={<Loader />}>
+          <Header />
+          <ScondeNavebar />
+          {children}
+          <Footer />
+        </Suspense>
+
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossOrigin="anonymous"></script>
 
         <ToastContainer />
@@ -46,7 +55,7 @@ export default function RootLayout({
           integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
           crossOrigin="anonymous"></script> */}
 
-          <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
       </body>
     </html>
   );

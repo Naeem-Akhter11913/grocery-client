@@ -1,19 +1,23 @@
 'use client'
-import CategoryCard from '@/components/categoryCard';
-import FillPrice from '@/components/fillPrice';
-import NewProducts from '@/components/newProducts';
-import ProductDescription from '@/components/productDescription';
-import ProductInfo from '@/components/productInfo/ProductInfo';
-import ProductReview from '@/components/productReviews';
-import RelatedProducts from '@/components/relatedProducts';
-import ServiceProvide from '@/components/service-provide/ServiceProvide';
-import ShowAllProducts from '@/components/showAllProducts';
-import SideBanner from '@/components/sideBanner';
-import SliderComponent from '@/components/sliderComponent';
-import AdditionalInfo from '@/components/specsTable';
-import VendorDetails from '@/components/vendor';
-import { useParams } from 'next/navigation'
-import React, { useState } from 'react'
+
+import dynamic from "next/dynamic";
+import Loader from "@/components/loader/loader";
+import { useParams } from "next/navigation";
+import { useState } from "react";
+
+const CategoryCard = dynamic(() => import('@/components/categoryCard'),{ssr:false,loading: () => <Loader/>});
+const FillPrice = dynamic(() => import('@/components/fillPrice'),{ssr:false,loading: () => <Loader/>});
+const NewProducts = dynamic(() => import('@/components/newProducts'),{ssr:false,loading: () => <Loader/>});
+const ProductDescription = dynamic(() => import('@/components/productDescription'),{ssr:false,loading: () => <Loader/>});
+const ProductInfo = dynamic(() => import('@/components/productInfo/ProductInfo'),{ssr:false,loading: () => <Loader/>});
+const ProductReview = dynamic(() => import('@/components/productReviews'),{ssr:false,loading: () => <Loader/>});
+const RelatedProducts = dynamic(() => import('@/components/relatedProducts'),{ssr:false,loading: () => <Loader/>});
+const ServiceProvide = dynamic(() => import('@/components/service-provide/ServiceProvide'),{ssr:false,loading: () => <Loader/>});
+const ShowAllProducts = dynamic(() => import('@/components/showAllProducts'),{ssr:false,loading: () => <Loader/>});
+const SideBanner = dynamic(() => import('@/components/sideBanner'),{ssr:false,loading: () => <Loader/>});
+const SliderComponent = dynamic(() => import('@/components/sliderComponent'),{ssr:false,loading: () => <Loader/>});
+const AdditionalInfo = dynamic(() => import('@/components/specsTable'),{ssr:false,loading: () => <Loader/>});
+const VendorDetails = dynamic(() => import('@/components/vendor'),{ssr:false,loading: () => <Loader/>});
 
 const imgs = [
   '/trending_product/thumbnail-1.jpg',

@@ -1,13 +1,16 @@
 'use client'
 import React, { useEffect, useRef, useState } from 'react'
+import dynamic from 'next/dynamic'
 import './style.css'
-import { ArrowDown, ArrowUp, Headset, LevelRows } from '@/utils/Arrows'
+import { ArrowDown, Headset, LevelRows } from '@/utils/Arrows'
 import navContent from './middleContent'
 import { naveType } from '@/utils/types'
-import HoverComponent from '../nav-hover/HoverComponent'
+
+const Loader = dynamic(() => import('../loader/loader'), { ssr: false });
+const HoverComponent = dynamic(() => import('../nav-hover/HoverComponent'), { loading: () => <Loader /> })
 
 const ScondeNavebar = () => {
-  const [navItems, setNavItems] = useState<naveType[]>([])
+  const [navItems, setNavItems] = useState<naveType[]>([...navContent])
   const [hoverIndex, setHoverIndex] = useState<number | null>(-1);
 
   const detectDOMHeight = useRef<HTMLDivElement>(null)
@@ -30,7 +33,7 @@ const ScondeNavebar = () => {
       if (scrollTop > 150) {
         setIsInView(true);
       }
-      if(scrollTop === 0) setIsInView(false)
+      if (scrollTop === 0) setIsInView(false)
 
       lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
     };
@@ -43,7 +46,7 @@ const ScondeNavebar = () => {
 
 
   return (
-    <div className={`d-flex justify-content-between border w-100 bg-white border-1 px-2 mt-3 mb-3 custom-second-padding ${isInView ? 'fixed-navbar':''}`} ref={detectDOMHeight}>
+    <div className={`d-flex justify-content-between border w-100 bg-white border-1 px-2 mt-3 mb-3 custom-second-padding ${isInView ? 'fixed-navbar' : ''}`} ref={detectDOMHeight}>
       <div className='left-content d-flex align-items-center'>
         <button className='btn btn-success'>
           <LevelRows />

@@ -1,12 +1,15 @@
 'use client'
-import React, { JSX, useEffect, useState } from 'react'
-import DashboadContent from '@/components/dashboard/dashboard-content';
-import MyAccount from '@/components/dashboard/my-account-address';
-import MyAddress from '@/components/dashboard/my-address';
-import Order from '@/components/dashboard/order';
-import TrackOrder from '@/components/dashboard/track-order';
-import './style.css'
+import React, { JSX, Suspense, useEffect, useState } from 'react'
 import Head from 'next/head';
+import dynamic from 'next/dynamic';
+import './style.css'
+import Loader from '@/components/loader/loader';
+const DashboadContent = dynamic(() => import('@/components/dashboard/dashboard-content'),{ssr:false,loading:() => <Loader/>});
+const MyAccount = dynamic(() => import('@/components/dashboard/my-account-address'),{ssr:false,loading:() => <Loader/>});
+const MyAddress = dynamic(() => import('@/components/dashboard/my-address'),{ssr:false,loading:() => <Loader/>});
+const Order = dynamic(() => import('@/components/dashboard/order'),{ssr:false,loading:() => <Loader/>});
+const TrackOrder = dynamic(() => import('@/components/dashboard/track-order'),{ssr:false,loading:() => <Loader/>});
+
 
 type TabType = 'dashboard' | 'my-account' | 'my-address' | 'order' | 'track-order';
 
@@ -38,7 +41,7 @@ const DashboardPage = () => {
   }, [tabType,]);
 
   return (
-    <>
+    <Suspense fallback={<Loader />}>
     <Head>
       <title>{`Dashboard - ${tabType}`}</title>
       <meta name="description" content={'Custon content'} />
@@ -58,7 +61,7 @@ const DashboardPage = () => {
         </div>
       </div>
     </div>
-    </>
+    </Suspense>
   )
 }
 

@@ -6,7 +6,6 @@ import Link from 'next/link'
 import React from 'react'
 
 const AllBlogs = () => {
-    // console.log(Array.from().length)
     return (
         <div className="row">
             <div className="col-9">

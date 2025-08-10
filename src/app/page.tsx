@@ -1,22 +1,43 @@
 'use client'
-import DailyBestSells from "@/components/dailyBestSells";
-// const DailyBestSells = dynamic(() => import("@/components/dailyBestSells"), {
-//   ssr: false, // This disables server-side rendering
-// });
-// import dynamic from "next/dynamic";
-import DealsOfTheDay from "@/components/dealsOfTheDay";
-import FeaturedCategories from "@/components/featuredCategories";
-import FeatureCart from "@/components/featuredCategories/featureCart";
-import HeroSlider from "@/components/heroSlider";
-import PopularProducts from "@/components/popularProducts";
-// import { ChevronRight, LeftArrow, RightArrow } from "@/utils/Arrows";
-import { CategoryItem } from "@/utils/types";
-// import TrendingProducts from "@/components/trending";
-// import SliderComponent from "@/components/sliderComponent";
-// import ServiceProvide from "@/components/service-provide/ServiceProvide";
-import { useEffect, useState } from "react";
-import { homeItems } from "./items";
+
+import React, { Suspense, useEffect, useState } from "react";
+import dynamic from "next/dynamic";
+
 import { productsItems } from "@/components/popularProducts/productsArray";
+import { homeItems } from "./items";
+import { ChevronRight } from "@/utils/Arrows";
+import { CategoryItem } from "@/utils/types";
+import Loader from "@/components/loader/loader";
+
+const DailyBestSells = dynamic(() => import('@/components/dailyBestSells'), {
+  ssr: false,
+  loading: () => <Loader />, // Show loader while loading
+});
+const DealsOfTheDay = dynamic(() => import('@/components/dealsOfTheDay'), {
+  loading: () => <Loader />,
+});
+const FeaturedCategories = dynamic(() => import('@/components/featuredCategories'), {
+  loading: () => <Loader />,
+});
+const FeatureCart = dynamic(() => import('@/components/featuredCategories/featureCart'), {
+  loading: () => <Loader />,
+});
+const HeroSlider = dynamic(() => import('@/components/heroSlider'), {
+  loading: () => <Loader />,
+});
+const PopularProducts = dynamic(() => import('@/components/popularProducts'), {
+  loading: () => <Loader />,
+});
+const TrendingProducts = dynamic(() => import('@/components/trending'), {
+  loading: () => <Loader />,
+});
+const SliderComponent = dynamic(() => import('@/components/sliderComponent'), {
+  loading: () => <Loader />,
+});
+const ServiceProvide = dynamic(() => import('@/components/service-provide/ServiceProvide'), {
+  loading: () => <Loader />,
+});
+
 
 export default function Home() {
 
@@ -35,7 +56,7 @@ export default function Home() {
   }, [])
 
   return (
-    <>
+    <Suspense fallback={<Loader />}>
       <HeroSlider />
       <div className="position-relative">
         <div className="d-flex justify-content-between align-items-center mx-4 my-4">
@@ -84,14 +105,13 @@ export default function Home() {
         <DailyBestSells />
       </div>
 
-      {/* <>
+      <>
         <div className="d-flex justify-content-between mx-3 my-3">
           <h2>Deals Of The Day</h2>
           <p>All See <ChevronRight /></p>
         </div>
         <DealsOfTheDay />
       </>
-
       <>
         <TrendingProducts />
       </>
@@ -102,7 +122,7 @@ export default function Home() {
 
       <>
         <ServiceProvide />
-      </>  */}
-    </>
+      </>
+    </Suspense>
   );
 }
