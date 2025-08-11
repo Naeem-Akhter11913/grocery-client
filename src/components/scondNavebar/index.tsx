@@ -5,6 +5,7 @@ import './style.css'
 import { ArrowDown, Headset, LevelRows } from '@/utils/Arrows'
 import navContent from './middleContent'
 import { naveType } from '@/utils/types'
+const BrowserAllCategories = dynamic(() => import('./BrowserAllCategories'),{ssr: false, loading:() => <Loader />})
 
 const Loader = dynamic(() => import('../loader/loader'), { ssr: false });
 const HoverComponent = dynamic(() => import('../nav-hover/HoverComponent'), { loading: () => <Loader /> })
@@ -47,12 +48,15 @@ const ScondeNavebar = () => {
 
   return (
     <div className={`d-flex justify-content-between border w-100 bg-white border-1 px-2 mt-3 mb-3 custom-second-padding ${isInView ? 'fixed-navbar' : ''}`} ref={detectDOMHeight}>
-      <div className='left-content d-flex align-items-center'>
+      <div className='left-content d-flex align-items-center position-relative'>
         <button className='btn btn-success'>
           <LevelRows />
           <span className='mx-2 middle-font-size'>Browse All Categories</span>
           <ArrowDown />
         </button>
+        <div className="tooltip-wrapper">
+          <BrowserAllCategories />
+        </div>
       </div>
 
       <div className='middle-content d-flex gap-4 align-items-center custom-gap'>
