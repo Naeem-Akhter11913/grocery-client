@@ -58,7 +58,7 @@ export default function VendorsSearch({ callBackFunc, serchKeywords }: vendorCom
             </select>
           </div>
 
-          <div className="input-group" >
+          <div className="input-group filter" >
             <span className="input-group-text">
               <MdSort />
             </span>

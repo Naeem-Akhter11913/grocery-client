@@ -1,5 +1,6 @@
 export interface Vendor {
   id: number;
+  link: string;
   name: string;
   logo: string;
   badge?: string;

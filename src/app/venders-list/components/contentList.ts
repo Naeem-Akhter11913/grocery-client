@@ -3,6 +3,7 @@ import { Vendor } from "../types/vendersTypes";
 export const vendors: Vendor[] = [
   {
     id: 1,
+    link: 'vendor-details',
     name: "Nature Food",
     logo: "vendor-1.png",
     badge: "Mail",
@@ -15,6 +16,7 @@ export const vendors: Vendor[] = [
   },
   {
     id: 2,
+    link: 'vendor-details',
     name: "Mrs. Smith's Pie",
     logo: "vendor-2.png",
     badge: "Preferred",
@@ -27,6 +29,7 @@ export const vendors: Vendor[] = [
   },
   {
     id: 3,
+    link: 'vendor-details',
     name: "Red Baron",
     logo: "vendor-3.png",
     since: "2012",
@@ -38,6 +41,7 @@ export const vendors: Vendor[] = [
   },
   {
     id: 4,
+    link: 'vendor-details',
     name: "Noodle Soup",
     logo: "vendor-4.png",
     badge: "Mail",
@@ -50,6 +54,7 @@ export const vendors: Vendor[] = [
   },
   {
     id: 5,
+    link: 'vendor-details',
     name: "Maruchan Ram",
     logo: "vendor-7.png",
     since: "2012",
@@ -61,6 +66,7 @@ export const vendors: Vendor[] = [
   },
   {
     id: 6,
+    link: 'vendor-details',
     name: "Totino’s Pizza",
     logo: "vendor-8.png",
     since: "2012",
@@ -72,6 +78,7 @@ export const vendors: Vendor[] = [
   },
   {
     id: 7,
+    link: 'vendor-details',
     name: "Hambger Hel",
     logo: "vendor-9.png",
     since: "2012",
@@ -83,6 +90,7 @@ export const vendors: Vendor[] = [
   },
   {
     id: 8,
+    link: 'vendor-details',
     name: "Country Crock",
     logo: "vendor-10.png",
     since: "2012",

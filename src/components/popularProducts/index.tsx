@@ -1,50 +1,20 @@
 'use client';
-import React, { useEffect, useRef, useState } from 'react';
-import './style.css';
+import React, { RefObject,useState } from 'react';
 import { ProductItem } from '@/utils/types';
 import { CartIcon, Compare, WishList, View } from '@/utils/Arrows';
-import { productsItems } from './productsArray';
-let Isotope: any = null;
+import './style.css';
 
 import Link from 'next/link';
 
-const PopularProducts: React.FC<{ filterType: string }> = ({ filterType }) => {
+type prpularProductProbsTyep = {
+  filterType?: string;
+  items: ProductItem[];
+  isotopRef?: RefObject<HTMLDivElement | null>;
+}
+
+const PopularProducts: React.FC<prpularProductProbsTyep> = ({ filterType,items,isotopRef }) => {
+
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-  const [items, setItems] = useState<ProductItem[] | []>([...productsItems]);
-  const isotopRef = useRef<HTMLDivElement | null>(null);
-  const [isotopInstance, setIsotopInstance] = useState<Isotope | undefined>(undefined);
-
-  useEffect(() => {
-    let isMounted = true;
-    if (isotopRef.current && typeof window !== 'undefined') {
-      import('isotope-layout').then((module) => {
-        if (isMounted) {
-          Isotope = module.default;
-          const isoInstance = new Isotope(isotopRef.current, {
-            itemSelector: ".grid-item",
-            // layoutMode: "fitRows",
-            // percentPosition: true,
-          });
-          setIsotopInstance(isoInstance);
-        }
-      });
-    }
-    return () => {
-      isMounted = false;
-    };
-  }, []);
-
-
-
-
-  useEffect(() => {
-    if (isotopInstance) {
-      filterType === "*"
-        ? isotopInstance.arrange({ filter: "*" })
-        : isotopInstance.arrange({ filter: `.${filterType}` });
-    }
-
-  }, [filterType, isotopInstance])
 
   return (
     <div className={`grid ${filterType === '*' ? 'grid-tall' : ''}`} ref={isotopRef}>
@@ -54,7 +24,6 @@ const PopularProducts: React.FC<{ filterType: string }> = ({ filterType }) => {
             className={`card shadow-sm position-relative custom-cart-hover-effect position-relative-custom`}
             onMouseEnter={() => setHoveredIndex(index)}
             onMouseLeave={() => setHoveredIndex(null)}
-          // style={{marginBlock:10}}
           >
             <span className="custom-badge bg-danger position-absolute top-0 start-0">
               {item.tag}

@@ -1,13 +1,16 @@
 'use client'
 
-import React, { Suspense, useEffect, useState } from "react";
+import React, { Suspense, useEffect, useRef, useState } from "react";
 import dynamic from "next/dynamic";
 
 import { productsItems } from "@/components/popularProducts/productsArray";
 import { homeItems } from "./items";
 import { ChevronRight } from "@/utils/Arrows";
-import { CategoryItem } from "@/utils/types";
+import { CategoryItem, ProductItem } from "@/utils/types";
 import Loader from "@/components/loader/loader";
+let Isotope: any = null;
+
+const PaginationComponenet = dynamic(() => import("@/components/pagination/Pagination"),{ssr:false, loading: () => <Loader />});
 
 const DailyBestSells = dynamic(() => import('@/components/dailyBestSells'), {
   ssr: false,
@@ -45,6 +48,14 @@ export default function Home() {
   const [filterType, setFilteType] = useState('*');
   const [filterKeys, setFilterKeys] = useState<string[]>([]);
 
+
+// For Popular Products
+
+  const [popularProduct, setPopularProduct] = useState<ProductItem[] | []>([...productsItems]);
+  const isotopRef = useRef<HTMLDivElement | null>(null);
+  const [isotopInstance, setIsotopInstance] = useState<Isotope | undefined>(undefined);
+
+
   function handleFilter(filterType: string) {
     setFilteType(filterType);
   }
@@ -54,6 +65,38 @@ export default function Home() {
       setFilterKeys(Array.from(new Set(productsItems.map(({ type }) => type))));
     }
   }, [])
+
+  // For Popular Products
+   
+  useEffect(() => {
+    let isMounted = true;
+    if (isotopRef.current && typeof window !== 'undefined') {
+      import('isotope-layout').then((module) => {
+        if (isMounted) {
+          Isotope = module.default;
+          const isoInstance = new Isotope(isotopRef.current, {
+            itemSelector: ".grid-item",
+          });
+          setIsotopInstance(isoInstance);
+        }
+      });
+    }
+    return () => {
+      isMounted = false;
+    };
+  }, [isotopRef.current]);
+
+
+
+
+  useEffect(() => {
+    if (isotopInstance) {
+      filterType === "*"
+        ? isotopInstance.arrange({ filter: "*" })
+        : isotopInstance.arrange({ filter: `.${filterType}` });
+    }
+
+  }, [filterType, isotopInstance])
 
   return (
     <Suspense fallback={<Loader />}>
@@ -90,7 +133,8 @@ export default function Home() {
           </ul>
         </div>
 
-        <PopularProducts filterType={filterType} />
+        <PopularProducts filterType={filterType} items={popularProduct} isotopRef={isotopRef} />
+        <PaginationComponenet />
       </>
 
       <div className="mt-3">

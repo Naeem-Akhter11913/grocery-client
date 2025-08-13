@@ -43,7 +43,7 @@ const VendersList: React.FC<Props> = ({ vendor }) => {
                                     <FaPhoneAlt className="me-1 text-success" />
                                     <strong>Call Us: </strong> {venderItems.phone}
                                 </span>
-                                <a href="#" className="btn btn-success btn-sm btn-visit">
+                                <a href={`${venderItems.link}`} className="btn btn-success btn-sm btn-visit">
                                     Visit Store <FaArrowRight />
                                 </a>
                             </div>
