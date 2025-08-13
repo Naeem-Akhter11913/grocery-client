@@ -9,6 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@mui/material": "^7.3.1",
     "bootstrap": "^5.3.5",
     "grocery-client": "file:",
     "isotope-layout": "^3.0.6",

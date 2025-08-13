@@ -1,6 +1,7 @@
 .remove-input-border {
   border: none !important;
   width: 22rem !important;
+  font-size: 20px;
 }
 
 .remove-input-border:focus-visible {
@@ -63,7 +64,6 @@
 }
 
 .center-css {
-  top: 50px;
-  left: 300px;
-  /* right: 100px; */
+  top: 58px;
+  left: 342px;
 }

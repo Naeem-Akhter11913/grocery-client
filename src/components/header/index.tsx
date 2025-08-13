@@ -5,6 +5,7 @@ import './style.css';
 import { ArrowDown } from '@/utils/Arrows';
 import Link from 'next/link';
 import CategoriesDropdown from './CategoriesDropdown';
+import { FiSearch } from 'react-icons/fi';
 
 const Header = () => {
   const [searchText, setSearchText] = useState('');
@@ -42,7 +43,7 @@ const Header = () => {
             className="flex-grow-1 px-4 py-2 remove-input-border"
           />
           <div className="d-flex align-items-center px-4 text-secondary cursor-pointer position-absolute end-0 top-50 translate-middle-y">
-            <Image src="/navebar/search.png" alt="Search" width={37} height={20} />
+            <FiSearch style={{fontSize:20}} />
           </div>
         </div>
 
