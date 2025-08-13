@@ -1,11 +1,13 @@
 'use client'
 import React, { useEffect, useState } from 'react'
-import VendorsSearch from './components/VendorsSearch'
 import { vendors } from './components/contentList'
 import { Vendor } from './types/vendersTypes'
-import VendersList from './components/VendersList'
-import PaginationComponenet from '@/components/pagination/Pagination'
+const VendorsSearch = dynamic(() =>import('./components/VendorsSearch'),{ssr:false,loading: () => <Loader />});
+const VendersList = dynamic(() =>import('./components/VendersList'),{ssr:false,loading: () => <Loader />});
+const PaginationComponenet = dynamic(() =>import('@/components/pagination/Pagination'),{ssr:false,loading: () => <Loader />});
 import debounce from '@/hook/debounce'
+import dynamic from 'next/dynamic'
+import Loader from '@/components/loader/loader'
 
 const Venders = () => {
   const [vender, setVender] = useState<Vendor[]>([...vendors]);
@@ -14,8 +16,7 @@ const Venders = () => {
 
   useEffect(() => {
     const debouncedFilter = debounce(() => {
-      const filteredVendors = vendors.filter((items) =>
-        items.name.toLowerCase().includes(serchKeywords.toLowerCase())
+      const filteredVendors = vendors.filter((items) => items.name.toLowerCase().includes(serchKeywords.toLowerCase())
       );
       setVender(filteredVendors);
     }, 1000);
