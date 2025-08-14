@@ -1,20 +1,20 @@
 'use client'
+import { useRouter } from 'next/navigation';
 import React from 'react'
 import { FaStar, FaTwitter, FaFacebook, FaInstagram, FaPinterest, FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
 
-const VendorShopDetails = () => {
+const VendorShopDetails = ({ isInPage = true }: { isInPage?: boolean }) => {
+  const route = useRouter();
   return (
     <div className="card shadow-sm border-0 p-3 rounded-4" style={{ backgroundColor: "#cdeef5" }}>
-      {/* Logo */}
       <div className="text-center">
         <img
-          src="vendor/vendor-16.png" // Replace with your logo path
+          src="/vendor/vendor-16.png"
           alt="NestFood Logo"
           style={{ width: "100px" }}
         />
       </div>
 
-      {/* Company Info */}
       <div className="mt-3 text-center">
         <small className="text-muted">Since 2012</small>
         <h5 className="fw-bold mb-1">Nest Food.,Ltd</h5>
@@ -24,13 +24,11 @@ const VendorShopDetails = () => {
         </div>
       </div>
 
-      {/* Description */}
       <p className="text-muted mt-3" style={{ fontSize: "0.9rem" }}>
         Got a smooth, buttery spread in your fridge? Chances are good that it’s Good Chef.
         This brand made Lionto's list of the most popular grocery brands across the country.
       </p>
 
-      {/* Social Links */}
       <h6 className="fw-bold mt-3">Follow Us</h6>
       <div className="d-flex gap-2 mb-3">
         <a href="#" className="btn btn-outline-secondary btn-sm rounded-circle">
@@ -62,7 +60,9 @@ const VendorShopDetails = () => {
       </div>
 
       {/* Button */}
-      <button className="btn btn-success w-100 rounded-pill">Contact Seller</button>
+      {isInPage && <button className="btn btn-success w-100 rounded-pill" onClick={() => {
+        route.push('/contact-store/id-will-be-add-soon')
+      }}>Contact Seller</button>}
     </div>
   )
 }

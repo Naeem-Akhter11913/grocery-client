@@ -1,0 +1,70 @@
+.chat-bg {
+  background-color: #ece5dd;
+
+}
+
+.chat-bg-rounded {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.chat-bg-bottom-rounded{
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.chat-bubble {
+  padding: 10px 15px;
+  border-radius: 18px;
+  animation: fadeIn 0.3s ease-in;
+  word-wrap: break-word;
+}
+
+.chat-bubble.user {
+  background-color: #25d366;
+  color: white;
+  border-bottom-right-radius: 4px;
+}
+
+.chat-bubble.store {
+  background-color: white;
+  border: 1px solid #ddd;
+  color: #333;
+  border-bottom-left-radius: 4px;
+}
+
+.cusooooooo div {
+  display: flex;
+  justify-content: end !important;
+  border: 1px solid red;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.typing-dots::after {
+  content: "•••";
+  animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0.2;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.2;
+  }
+}

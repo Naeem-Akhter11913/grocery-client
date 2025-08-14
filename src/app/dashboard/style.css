@@ -1,6 +1,6 @@
-.main-container{
+/* .main-container{
     padding: 100px;
-}
+} */
 .tab-container{
     display: grid;
     grid-template-columns: 15% 80%;
