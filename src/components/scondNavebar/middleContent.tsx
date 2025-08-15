@@ -26,11 +26,11 @@ const navItems = [
     dropdown: true,
     content: [{ url: "/venders-list", name: 'Vendor List' }, { url: "#", name: 'Vendor Profile' }],
   },
-  // {
-  //   label: 'Mega Menu',
-  //   dropdown: true,
-  //   content: [],
-  // },
+  {
+    label: 'Mega Menu',
+    dropdown: true,
+    content: [],
+  },
   {
     label: 'Blog',
     dropdown: true,

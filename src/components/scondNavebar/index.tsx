@@ -70,7 +70,7 @@ const ScondeNavebar = () => {
 
       <div className='middle-content d-flex gap-4 align-items-center custom-gap'>
         {navItems.map((item, index) => {
-          return index === 4 ? (
+          return item.label === 'Mega Menu' ? (
             <div
               key={index}
               className="position-relative"
