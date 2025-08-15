@@ -45,3 +45,8 @@
   z-index: 999;
   width: 30vw;
 }
+
+
+.custom-top-50{
+  top: 38% !important;
+}

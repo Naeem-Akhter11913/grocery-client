@@ -6,21 +6,23 @@ import navContent from './middleContent';
 import { naveType } from '@/utils/types'
 import './style.css'
 import './BrowserAllCategories.css'
+import CategorySection from '../nav-hover/components/CategorySection';
 
 const Loader = dynamic(() => import('../loader/loader'), { ssr: false });
-const BrowserAllCategories = dynamic(() => import('./BrowserAllCategories'),{ssr: false, loading:() => <Loader />});
-const HoverComponent = dynamic(() => import('../nav-hover/HoverComponent'), { loading: () => <Loader />, ssr:false });
+const BrowserAllCategories = dynamic(() => import('./BrowserAllCategories'), { ssr: false, loading: () => <Loader /> });
+const HoverComponent = dynamic(() => import('../nav-hover/HoverComponent'), { loading: () => <Loader />, ssr: false });
 
 const ScondeNavebar = () => {
   const [navItems, setNavItems] = useState<naveType[]>([...navContent])
   const [hoverIndex, setHoverIndex] = useState<number | null>(-1);
-  const [showCat,setShowCat] = useState<boolean>(false)
+  const [showCat, setShowCat] = useState<boolean>(false)
 
   const detectDOMHeight = useRef<HTMLDivElement>(null)
   const [isInView, setIsInView] = useState<boolean>(false);
+  const [showNaveCat, setShowNavCat] = useState<boolean>(false)
 
 
-  const handleOpen = () =>{
+  const handleOpen = () => {
     setShowCat(!showCat);
   };
 
@@ -67,15 +69,37 @@ const ScondeNavebar = () => {
       </div>
 
       <div className='middle-content d-flex gap-4 align-items-center custom-gap'>
-        {navItems.map((item, index) => (
-          <HoverComponent
+        {navItems.map((item, index) => {
+          return index === 4 ? (
+            <div
+              key={index}
+              className="position-relative"
+              onMouseEnter={() => setShowNavCat(true)}
+              onMouseLeave={() => setShowNavCat(false)}
+            >
+              <button className="btn">
+                Mega Menu <ArrowDown />
+              </button>
+
+              {showNaveCat && (
+                <div className="position-absolute start-0 z-3 p-3 mega-menu-container bg-white shadow shadow-3 rounded-3" style={{
+                  top: "100%",
+                  width: "98vw",
+                  transform: "translateX(-50%)",
+                }}>
+                  <CategorySection />
+                </div>
+              )}
+            </div>
+          ) : <HoverComponent
             key={index}
             item={item}
             index={index}
             setHoverIndex={setHoverIndex}
             hoverIndex={hoverIndex}
           />
-        ))}
+        }
+        )}
 
       </div>
 
