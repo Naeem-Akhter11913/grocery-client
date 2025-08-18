@@ -9,9 +9,9 @@ import { FiSearch } from 'react-icons/fi';
 
 const Header = () => {
   const [searchText, setSearchText] = useState('');
-  const [isShow,setiIsShow] = useState<boolean>(false);
+  const [isShow, setiIsShow] = useState<boolean>(false);
 
-  const handleClicked = () =>{
+  const handleClicked = () => {
     setiIsShow(!isShow)
   }
 
@@ -33,7 +33,7 @@ const Header = () => {
               <ArrowDown />
             </span>
 
-            
+
           </div>
           <input
             type="text"
@@ -43,23 +43,25 @@ const Header = () => {
             className="flex-grow-1 px-4 py-2 remove-input-border"
           />
           <div className="d-flex align-items-center px-4 text-secondary cursor-pointer position-absolute end-0 top-50 translate-middle-y">
-            <FiSearch style={{fontSize:20}} />
+            <FiSearch style={{ fontSize: 20 }} />
           </div>
         </div>
 
         {/* Icons */}
         <div className="d-flex align-items-center gap-3">
           {[
-            { icon: '/navebar/icon-compare.svg', label: 'Compare', count: 3 },
-            { icon: '/navebar/icon-heart.svg', label: 'Wishlist', count: 3 },
-            { icon: '/navebar/icon-cart.svg', label: 'Cart', count: 2 },
+            { icon: '/navebar/icon-compare.svg', link: '#',label: 'Compare', count: 3 },
+            { icon: '/navebar/icon-heart.svg', link: '/shop-wishlist', label: 'Wishlist', count: 3 },
+            { icon: '/navebar/icon-cart.svg', link: '#',label: 'Cart', count: 2 },
           ].map((item, index) => (
             <div key={item.label} className="position-relative text-center">
+              <Link href={item.link} className='text-decoration-none'>
               <Image src={item.icon} alt={item.label} width={24} height={24} />
               <span className={`badge-count position-absolute top-0 start-100 translate-middle-${index}`}>
                 {item.count}
               </span>
               <span className="small-text mt-1 header-font-size">{item.label}</span>
+              </Link>
             </div>
           ))}
 
@@ -72,7 +74,7 @@ const Header = () => {
       </header>
 
 
-      <CategoriesDropdown isShow={isShow}/>
+      <CategoriesDropdown isShow={isShow} />
     </div>
   );
 };

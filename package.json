@@ -11,7 +11,10 @@
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
+    "@mui/icons-material": "^7.3.1",
     "@mui/material": "^7.3.1",
+    "@mui/x-data-grid": "^8.10.1",
+    "@mui/x-data-grid-generator": "^8.10.1",
     "bootstrap": "^5.3.5",
     "grocery-client": "file:",
     "isotope-layout": "^3.0.6",
