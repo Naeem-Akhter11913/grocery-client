@@ -50,7 +50,7 @@ const Header = () => {
         {/* Icons */}
         <div className="d-flex align-items-center gap-3">
           {[
-            { icon: '/navebar/icon-compare.svg', link: '#',label: 'Compare', count: 3 },
+            { icon: '/navebar/icon-compare.svg', link: '/shop-compare',label: 'Compare', count: 3 },
             { icon: '/navebar/icon-heart.svg', link: '/shop-wishlist', label: 'Wishlist', count: 3 },
             { icon: '/navebar/icon-cart.svg', link: '#',label: 'Cart', count: 2 },
           ].map((item, index) => (
