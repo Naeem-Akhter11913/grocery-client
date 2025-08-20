@@ -67,3 +67,17 @@
   top: 58px;
   left: 342px;
 }
+
+.cart-hover {
+  position: absolute;
+  top: 100%;
+  right: -84px;
+  width: 330px;
+  top: -7px;
+  z-index: 10;
+}
+
+.cart-hover-container{
+  position: relative;
+  
+}
