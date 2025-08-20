@@ -1,7 +1,7 @@
 "use client";
 
-import Image from "next/image";
-import "bootstrap/dist/css/bootstrap.min.css";
+// import Image from "next/image";
+// import "bootstrap/dist/css/bootstrap.min.css";
 // import "./CategorySection.css";
 
 export default function CategorySection() {

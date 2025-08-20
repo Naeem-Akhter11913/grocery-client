@@ -1,9 +1,7 @@
 'use client'
 import React from 'react'
 import Loader from '@/components/loader/loader'
-import dynamic from 'next/dynamic'
-import Link from 'next/link';
-import { Rating } from '@mui/material';
+import dynamic from 'next/dynamic';
 
 
 const YourCartTable = dynamic(() => import('./components/YourCartTable'), { ssr: false, loading: () => <Loader /> });
@@ -21,14 +19,20 @@ const ShopCartPage = () => {
           <p>There are 3 products in your cart</p>
           <button type="button" className="btn btn-outline-success"> <i className="bi bi-trash3"></i> Clear Cart</button>
         </div>
-        <div className="col-12 col-lg-8 order-1 order-lg-1" style={{height:500}}>
+        <div className="col-12 col-lg-8 order-1 order-lg-1 mb-3" style={{ height: 500 }}>
           <YourCartTable />
         </div>
 
+
         <div className="col-12 col-lg-4 order-3 order-lg-2">
+
           <CheckoutCarts />
         </div>
 
+        <div className='col-12 col-lg-8 order-2 order-lg-3 mt-3 mt-lg-0 d-flex justify-content-between mt-3'>
+          <button type="button" className="btn btn-success"> <i className="bi bi-arrow-left"/> Countinue Shopping</button>
+          <button type="button" className="btn btn-success"><i className="bi bi-arrow-repeat"></i> Update Cart</button>
+        </div>
         <div className="col-12 col-lg-8 order-2 order-lg-3 mt-3 mt-lg-0">
           <ShippingAndCoupon />
         </div>

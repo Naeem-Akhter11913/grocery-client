@@ -1,14 +1,16 @@
 'use client';
 import Image from 'next/image';
-import { useState } from 'react';
+import React , { useState } from 'react';
 import './style.css';
 import { ArrowDown } from '@/utils/Arrows';
 import Link from 'next/link';
 import CategoriesDropdown from './CategoriesDropdown';
 import { FiSearch } from 'react-icons/fi';
 import CartHover from './components/CartHover';
+import dynamic from 'next/dynamic';
+const Drawer = dynamic(() => import('../drawer/Drawer'),{ssr:false});
 
-const Header = () => {
+const Header: React.FC<{}> = () => {
   const [searchText, setSearchText] = useState('');
   const [isShow, setiIsShow] = useState<boolean>(false);
   const [showCart, setShowCart] = useState<boolean>(false);
@@ -49,6 +51,10 @@ const Header = () => {
             <FiSearch style={{ fontSize: 20 }} />
           </div>
         </div>
+
+
+        <Drawer />
+
 
         {/* Icons */}
         <div className="d-flex align-items-center gap-3">
