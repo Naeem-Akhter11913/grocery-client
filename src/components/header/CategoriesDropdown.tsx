@@ -1,6 +1,6 @@
 'use client';
 import React, { useEffect, useMemo, useState } from 'react';
-import './categories.css'
+import './categoriesDropdown.css'
 import debounce from '@/hook/debounce';
 
 const items = [

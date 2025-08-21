@@ -56,11 +56,11 @@ const ScondeNavebar = () => {
 
 
   return (
-    <div className={`d-flex justify-content-between border w-100 bg-white border-1 px-2 mt-3 mb-3 custom-second-padding ${isInView ? 'fixed-navbar' : ''}`} ref={detectDOMHeight}>
+    <div className={`border w-100 bg-white border-1 px-2 mt-3 mb-3 custom-second-padding ${isInView ? 'fixed-navbar' : ''}`} ref={detectDOMHeight}>
       <div className='left-content d-flex align-items-center position-relative'>
-        <button className='btn btn-success' onClick={handleOpen}>
+        <button className='btn btn-success text-nowrap' onClick={handleOpen}>
           <LevelRows />
-          <span className='mx-2 middle-font-size'>Browse All Categories</span>
+          <span className='mx-2 middle-font-size '>Browse All Categories</span>
           <ArrowDown />
         </button>
         {showCat && <div className="tooltip-wrapper">
@@ -68,7 +68,7 @@ const ScondeNavebar = () => {
         </div>}
       </div>
 
-      <div className='middle-content d-flex gap-4 align-items-center custom-gap'>
+      <div className='middle-content'>
         {navItems.map((item, index) => {
           return item.label === 'Mega Menu' ? (
             <div
@@ -100,14 +100,15 @@ const ScondeNavebar = () => {
           />
         }
         )}
+        
 
       </div>
 
       <div className='rigth-content d-flex align-items-center'>
         <Headset />
         <div>
-          <p className="mb-0 fs-2 py-0 text-success">1900 - 888</p>
-          <p className="mb-0">24/7 Support Center</p>
+          <p className="mb-0 fs-2 py-0 text-success text-nowrap">1900 - 888</p>
+          <p className="mb-0 text-nowrap">24/7 Support Center</p>
         </div>
       </div>
     </div>

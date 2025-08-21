@@ -7,7 +7,7 @@ const ControlledAccordions = dynamic(() => import('./components/ControlledAccord
 const Drawer = () => {
   return (
     <div>
-      <p className="" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+      <p className="text-center fs-3" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
         <i className="bi bi-list" />
       </p>
 
