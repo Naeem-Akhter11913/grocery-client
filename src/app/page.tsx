@@ -118,10 +118,10 @@ export default function Home() {
 
           <div className="d-flex justify-content-between gap-3 align-items-center custom-swipper-button">
             <div className="custom-prev">
-              <i className="bi bi-chevron-left" style={{ fontSize: 30 }} />
+              <i className="bi bi-chevron-left" style={{ fontSize: 27 }} />
             </div>
             <div className="custom-next">
-              <i className="bi bi-chevron-right " style={{ fontSize: 30 }} />
+              <i className="bi bi-chevron-right " style={{ fontSize: 27 }} />
             </div>
           </div>
         </div>

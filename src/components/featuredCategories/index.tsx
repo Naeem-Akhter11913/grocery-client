@@ -7,17 +7,17 @@ type Props = {
   items: CategoryItem[];
 };
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination  } from 'swiper/modules';
+import { Navigation, Pagination } from 'swiper/modules';
 import './style.css'
 
 const FeaturedCategories: React.FC<Props> = ({ items }) => {
 
   return (
-    <div className="swiper-custom-wrapper">
+    <div className="swiper-custom-wrapper px-3">
 
       <Swiper
-      
-        modules={[Navigation, Pagination ]}
+        key={items.length}
+        modules={[Navigation, Pagination]}
         grabCursor
         spaceBetween={10}
         loop
