@@ -8,9 +8,10 @@ import { homeItems } from "./items";
 import { ChevronRight } from "@/utils/Arrows";
 import { CategoryItem, ProductItem } from "@/utils/types";
 import Loader from "@/components/loader/loader";
+import { useMediaQuery } from "@mui/material";
 let Isotope: any = null;
 
-const PaginationComponenet = dynamic(() => import("@/components/pagination/Pagination"),{ssr:false, loading: () => <Loader />});
+const PaginationComponenet = dynamic(() => import("@/components/pagination/Pagination"), { ssr: false, loading: () => <Loader /> });
 
 const DailyBestSells = dynamic(() => import('@/components/dailyBestSells'), {
   ssr: false,
@@ -49,7 +50,7 @@ export default function Home() {
   const [filterKeys, setFilterKeys] = useState<string[]>([]);
 
 
-// For Popular Products
+  // For Popular Products
 
   const [popularProduct, setPopularProduct] = useState<ProductItem[] | []>([...productsItems]);
   const isotopRef = useRef<HTMLDivElement | null>(null);
@@ -67,7 +68,7 @@ export default function Home() {
   }, [])
 
   // For Popular Products
-   
+
   useEffect(() => {
     let isMounted = true;
     if (isotopRef.current && typeof window !== 'undefined') {
@@ -101,16 +102,27 @@ export default function Home() {
   return (
     <Suspense fallback={<Loader />}>
       <HeroSlider />
+
       <div className="position-relative">
-        <div className="d-flex justify-content-between align-items-center mx-4 my-4">
-          <div className="d-flex flex-column flex-md-row align-items-center gap-3 gap-md-5">
+        <div className="d-flex  mx-4 my-4 featured-categories-container">
+
+          <div className="d-flex flex-column flex-md-row align-items-center gap-3 gap-md-5 ">
             <h3 className="mb-0">Featured Categories</h3>
-            <ul className="d-flex flex-wrap justify-content-center align-items-center gap-3 mb-0 list-unstyled">
+            <ul className="d-flex justify-content-center align-items-center gap-3 mb-0 list-unstyled ">
               <li><a className="nav-link px-2" href="shop-grid-right.html">Cake &amp; Milk</a></li>
               <li><a className="nav-link px-2" href="shop-grid-right.html">Coffes &amp; Teas</a></li>
               <li><a className="nav-link px-2 active" href="shop-grid-right.html">Pet Foods</a></li>
               <li><a className="nav-link px-2" href="shop-grid-right.html">Vegetables</a></li>
             </ul>
+          </div>
+
+          <div className="d-flex justify-content-between gap-3 align-items-center custom-swipper-button">
+            <div className="custom-prev">
+              <i className="bi bi-chevron-left" style={{ fontSize: 30 }} />
+            </div>
+            <div className="custom-next">
+              <i className="bi bi-chevron-right " style={{ fontSize: 30 }} />
+            </div>
           </div>
         </div>
 
