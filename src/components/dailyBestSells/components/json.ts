@@ -84,6 +84,20 @@ export const dailySelsItems= [
       }
     },
     {
+      tag: "New",
+      type: "Beverage",
+      frontImage: '/popular-products/product-2-1.jpg',
+      backImage: '/popular-products/product-2-2.jpg',
+      desc: "Peach Organic Sparkling Water",
+      stars: 4.5,
+      brand: "FreshFizz",
+      price: {
+        current: 12.99,
+        original: 15.0,
+        currency: "$"
+      }
+    },
+    {
       tag: "Limited",
       type: "Cereal",
       frontImage: '/popular-products/product-5-1.jpg',
@@ -94,6 +108,20 @@ export const dailySelsItems= [
       price: {
         current: 9.95,
         original: 11.95,
+        currency: "$"
+      }
+    },
+    {
+      tag: "New",
+      type: "Beverage",
+      frontImage: '/popular-products/product-2-1.jpg',
+      backImage: '/popular-products/product-2-2.jpg',
+      desc: "Peach Organic Sparkling Water",
+      stars: 4.5,
+      brand: "FreshFizz",
+      price: {
+        current: 12.99,
+        original: 15.0,
         currency: "$"
       }
     },
@@ -124,7 +152,22 @@ export const dailySelsItems= [
         original: 10.0,
         currency: "$"
       }
-    },{
+    },
+    {
+      tag: "New",
+      type: "Beverage",
+      frontImage: '/popular-products/product-2-1.jpg',
+      backImage: '/popular-products/product-2-2.jpg',
+      desc: "Peach Organic Sparkling Water",
+      stars: 4.5,
+      brand: "FreshFizz",
+      price: {
+        current: 12.99,
+        original: 15.0,
+        currency: "$"
+      }
+    },
+    {
       tag: "New",
       type: "Beverage",
       frontImage: '/popular-products/product-2-1.jpg',

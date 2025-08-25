@@ -46,20 +46,12 @@ const ServiceProvide = dynamic(() => import('@/components/service-provide/Servic
 export default function Home() {
 
   const [items, setItems] = useState<CategoryItem[]>([...homeItems]);
-  const [filterType, setFilteType] = useState('*');
   const [filterKeys, setFilterKeys] = useState<string[]>([]);
 
 
-  // For Popular Products
-
   const [popularProduct, setPopularProduct] = useState<ProductItem[] | []>([...productsItems]);
-  const isotopRef = useRef<HTMLDivElement | null>(null);
-  const [isotopInstance, setIsotopInstance] = useState<Isotope | undefined>(undefined);
 
 
-  function handleFilter(filterType: string) {
-    setFilteType(filterType);
-  }
 
   useEffect(() => {
     if (productsItems.length) {
@@ -67,37 +59,6 @@ export default function Home() {
     }
   }, [])
 
-  // For Popular Products
-
-  useEffect(() => {
-    let isMounted = true;
-    if (isotopRef.current && typeof window !== 'undefined') {
-      import('isotope-layout').then((module) => {
-        if (isMounted) {
-          Isotope = module.default;
-          const isoInstance = new Isotope(isotopRef.current, {
-            itemSelector: ".grid-item",
-          });
-          setIsotopInstance(isoInstance);
-        }
-      });
-    }
-    return () => {
-      isMounted = false;
-    };
-  }, [isotopRef.current]);
-
-
-
-
-  useEffect(() => {
-    if (isotopInstance) {
-      filterType === "*"
-        ? isotopInstance.arrange({ filter: "*" })
-        : isotopInstance.arrange({ filter: `.${filterType}` });
-    }
-
-  }, [filterType, isotopInstance])
 
   return (
     <Suspense fallback={<Loader />}>
@@ -108,11 +69,11 @@ export default function Home() {
 
           <div className="d-flex flex-column flex-md-row align-items-center gap-3 gap-md-5 ">
             <h3 className="mb-0">Featured Categories</h3>
-            <ul className="d-flex justify-content-center align-items-center gap-3 mb-0 list-unstyled ">
-              <li><a className="nav-link px-2" href="shop-grid-right.html">Cake &amp; Milk</a></li>
-              <li><a className="nav-link px-2" href="shop-grid-right.html">Coffes &amp; Teas</a></li>
-              <li><a className="nav-link px-2 active" href="shop-grid-right.html">Pet Foods</a></li>
-              <li><a className="nav-link px-2" href="shop-grid-right.html">Vegetables</a></li>
+            <ul className="d-flex justify-content-center align-items-center gap-3 mb-0 list-unstyled flex-nowrap ">
+              <li><a className="nav-link text-nowrap" href="#">Cake &amp; Milk</a></li>
+              <li><a className="nav-link text-nowrap" href="#">Coffes &amp; Teas</a></li>
+              <li><a className="nav-link active text-nowrap" href="#">Pet Foods</a></li>
+              <li><a className="nav-link text-nowrap" href="#">Vegetables</a></li>
             </ul>
           </div>
 
@@ -131,21 +92,19 @@ export default function Home() {
       <FeatureCart />
 
       <>
-        <div className="d-flex justify-content-between align-items-center  mx-4 my-4">
+        <div className="popular-products-container px-3 my-4">
           <h3>Popular Products</h3>
           <ul className="d-flex justify-content-between align-items-center gap-4 list-unstyled popular-custom-style">
-
-
-            <li className="" onClick={() => handleFilter('*')}>
+            <li className="" /*onClick={() => handleFilter('*')}*/>
               All
             </li>
-            {filterKeys.map((keys) => <li key={keys} className="" onClick={() => handleFilter(keys)}>
+            {filterKeys.map((keys) => <li key={keys} className="" /*onClick={() => handleFilter(keys)} */>
               {keys}
             </li>)}
           </ul>
         </div>
 
-        <PopularProducts filterType={filterType} items={popularProduct} isotopRef={isotopRef} />
+        <PopularProducts items={popularProduct} />
         <PaginationComponenet />
       </>
 

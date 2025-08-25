@@ -7,7 +7,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { dailySelsItems } from './json';
 import { ProductItem } from '@/utils/types';
-import './ss.css';
+import './dailySellCard.css';
 import { CartIcon, Compare, View, WishList } from '@/utils/Arrows';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -29,13 +29,13 @@ const DailyBestSellsCardSlider = () => {
             breakpoints={{
                 0: { slidesPerView: 1 },
                 520: { slidesPerView: Math.min(items.length, 2) },
-                950: { slidesPerView: Math.min(items.length, 3) },
+                950: { slidesPerView: Math.min(items.length, 2) },
                 1200: { slidesPerView: Math.min(items.length, 4) }
             }}
             className="slide-content-custom"
         > 
             {items.map((item, index) => (
-                <SwiperSlide key={index}>
+                <SwiperSlide key={index} className='swipper-slide-css cart-style'>
                     <div
                         className={`card shadow-sm position-relative custom-cart-hover-effect position-relative-custom`}
                         onMouseEnter={() => setHoveredIndex(index)}

@@ -42,8 +42,7 @@ const DealsOfTheDay = () => {
   }, []);
 
   return (
-    <div className='d-flex margin_bottom mx-3 gap-5'>
-
+    <div className='deals-of-the-day'>
       <div className='deals_container'>
         <div>
           <img src="/deals-of-the-day/banner-5.png" alt="" />

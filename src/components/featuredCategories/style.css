@@ -85,7 +85,9 @@
 }
 
 /* Extra Small (≤575px) */
-@media (max-width: 575.98px) {}
+@media (max-width: 575.98px) {
+  
+}
 
 /* Small (576px – 767px) */
 @media (min-width: 576px) and (max-width: 767.98px) {}
