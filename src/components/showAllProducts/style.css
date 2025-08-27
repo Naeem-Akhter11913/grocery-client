@@ -1,82 +1,129 @@
-
-
-.main-container:hover .left-rigth-arrow {
-    display: inline;
+/* Container */
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  max-width: 30rem;
+  /* margin: auto; */
+  position: relative;
+  font-family: sans-serif;
 }
 
+/* Main Image */
+.image img {
+  width: 100%;
+  max-width: 28rem;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  border: 2px solid #e6e6e6;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Thumbnail Container */
+.image-container {
+  position: relative;
+  width: 100%;
+  max-width: 28rem;
+}
 
 .show-image-container {
-    display: flex;
-    gap: 12px;
-    width: 28rem;
-    overflow-x: hidden;
-    padding: 5px;
-
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  scrollbar-width: none; /* Hide scrollbar (Firefox) */
+  -ms-overflow-style: none; /* IE/Edge */
+  padding: 5px;
 }
 
+.show-image-container::-webkit-scrollbar {
+  display: none; /* Hide scrollbar (Chrome, Safari) */
+}
+
+/* Thumbnails */
 .show-image-container img {
-    height: 100px;
-    border-radius: 12px;
-    transition: transform 0.3s ease-in-out;
+  height: 80px;
+  min-width: 80px;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out, border 0.3s;
+  cursor: pointer;
+  object-fit: cover;
 }
 
 .show-image-container img:hover {
-    cursor: pointer;
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .img-active {
-    border: 1px solid green;
-    border-radius: 12px;
-
+  border: 2px solid #3BB77E;
 }
 
+/* Left & Right Arrows */
 .left-rigth-arrow {
-    display: none;
-    position: relative;
-    width: 28rem;
-    height: 35px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  padding: 0 0.5rem;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
 }
 
-.left-rigth-arrow>div {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    height: 35px;
-    width: 35px;
-    background-color: rgb(238, 237, 237);
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.main-container:hover .left-rigth-arrow {
+  opacity: 1;
 }
 
-.left-rigth-arrow>div:first-child {
-    left: -10px;
+.left-rigth-arrow > div {
+  height: 40px;
+  width: 40px;
+  background-color: rgba(238, 237, 237, 0.9);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
-.left-rigth-arrow>div:last-child {
-    right: -10px;
+.left-rigth-arrow > div:hover {
+  background-color: #3BB77E;
+  color: white;
+  cursor: pointer;
 }
 
-.left-rigth-arrow>div:hover {
-    background-color: green;
-    cursor: pointer;
-    color: white;
+
+/* Animation keyframes */
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
-.image-container {
-    position: relative;
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
-.left-rigth-arrow {
-    position: absolute;
-    left: 0px;
-    top: 56px;
-    transform: translateY(-50%);
+/* Apply animation classes */
+.image img.animate-right {
+  animation: slideInRight 0.4s ease forwards;
 }
 
-.image img{
-    width: 28rem;
-    border: none;
+.image img.animate-left {
+  animation: slideInLeft 0.4s ease forwards;
 }

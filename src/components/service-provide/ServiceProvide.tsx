@@ -31,7 +31,7 @@ const features = [
 
 export default function ServiceProvide() {
     return (
-        <div className="d-flex flex-wrap justify-content-center align-items-center gap-3 bg-gray-50 mx-3 my-4">
+        <div className="d-flex flex-wrap justify-content-between align-items-center gap-3 bg-gray-50 my-4">
             {features.map((feature, index) => (
                 <div
                     key={index}

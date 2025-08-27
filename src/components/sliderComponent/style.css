@@ -35,7 +35,7 @@ img { display: block; max-width: 100%; height: auto; }
   align-items: flex-end;
   justify-content: space-between;
   gap: var(--space-4);
-  margin: 0 var(--space-2);
+  /* margin: 0 var(--space-2); */
   /* padding: var(--space-4); */
   border-radius: var(--radius-lg);
 

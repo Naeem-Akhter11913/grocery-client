@@ -1,17 +1,9 @@
+'use client'
 import React , {useEffect, useRef} from 'react'
 
 const MyAccount = () => {
 
   const formRef = useRef(null);
-
-  // useEffect(() => {
-  //   window.addEventListener('DOMContentLoaded',() =>{
-  //     const spanTag = formRef.current;
-  //     console.log(spanTag)
-  //   })
-  // }, [])
-
-  console.log('my account')
   
   return (
     <div className="container my-5">

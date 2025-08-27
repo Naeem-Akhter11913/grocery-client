@@ -46,7 +46,7 @@ const DashboardPage = () => {
       <title>{`Dashboard - ${tabType}`}</title>
       <meta name="description" content={'Custon content'} />
     </Head>
-    <div className='main-container'>
+    <div className='main-container mx-3'>
       <div className="tab-container">
         <div className="tab-sum-container">
           <button className={`btn border p-3 ${tabType === 'dashboard' ?'btn-success':'' }`} onClick={() => handleChangeTabs('dashboard')}>Dashboard</button>

@@ -1,23 +1,24 @@
 'use client'
 
+import { useState } from "react";
 import dynamic from "next/dynamic";
 import Loader from "@/components/loader/loader";
 import { useParams } from "next/navigation";
-import { useState } from "react";
+import './style.css'
 
-const CategoryCard = dynamic(() => import('@/components/categoryCard'),{ssr:false,loading: () => <Loader/>});
-const FillPrice = dynamic(() => import('@/components/fillPrice'),{ssr:false,loading: () => <Loader/>});
-const NewProducts = dynamic(() => import('@/components/newProducts'),{ssr:false,loading: () => <Loader/>});
-const ProductDescription = dynamic(() => import('@/components/productDescription'),{ssr:false,loading: () => <Loader/>});
-const ProductInfo = dynamic(() => import('@/components/productInfo/ProductInfo'),{ssr:false,loading: () => <Loader/>});
-const ProductReview = dynamic(() => import('@/components/productReviews'),{ssr:false,loading: () => <Loader/>});
-const RelatedProducts = dynamic(() => import('@/components/relatedProducts'),{ssr:false,loading: () => <Loader/>});
-const ServiceProvide = dynamic(() => import('@/components/service-provide/ServiceProvide'),{ssr:false,loading: () => <Loader/>});
-const ShowAllProducts = dynamic(() => import('@/components/showAllProducts'),{ssr:false,loading: () => <Loader/>});
-const SideBanner = dynamic(() => import('@/components/sideBanner'),{ssr:false,loading: () => <Loader/>});
-const SliderComponent = dynamic(() => import('@/components/sliderComponent'),{ssr:false,loading: () => <Loader/>});
-const AdditionalInfo = dynamic(() => import('@/components/specsTable'),{ssr:false,loading: () => <Loader/>});
-const VendorDetails = dynamic(() => import('@/components/vendor'),{ssr:false,loading: () => <Loader/>});
+const CategoryCard = dynamic(() => import('@/components/categoryCard'), { ssr: false, loading: () => <Loader /> });
+const FillPrice = dynamic(() => import('@/components/fillPrice'), { ssr: false, loading: () => <Loader /> });
+const NewProducts = dynamic(() => import('@/components/newProducts'), { ssr: false, loading: () => <Loader /> });
+const ProductDescription = dynamic(() => import('@/components/productDescription'), { ssr: false, loading: () => <Loader /> });
+const ProductInfo = dynamic(() => import('@/components/productInfo/ProductInfo'), { ssr: false, loading: () => <Loader /> });
+const ProductReview = dynamic(() => import('@/components/productReviews'), { ssr: false, loading: () => <Loader /> });
+const RelatedProducts = dynamic(() => import('@/components/relatedProducts'), { ssr: false, loading: () => <Loader /> });
+const ServiceProvide = dynamic(() => import('@/components/service-provide/ServiceProvide'), { ssr: false, loading: () => <Loader /> });
+const ShowAllProducts = dynamic(() => import('@/components/showAllProducts'), { ssr: false, loading: () => <Loader /> });
+const SideBanner = dynamic(() => import('@/components/sideBanner'), { ssr: false, loading: () => <Loader /> });
+const SliderComponent = dynamic(() => import('@/components/sliderComponent'), { ssr: false, loading: () => <Loader /> });
+const AdditionalInfo = dynamic(() => import('@/components/specsTable'), { ssr: false, loading: () => <Loader /> });
+const VendorDetails = dynamic(() => import('@/components/vendor'), { ssr: false, loading: () => <Loader /> });
 
 const imgs = [
   '/trending_product/thumbnail-1.jpg',
@@ -42,15 +43,15 @@ const PurchageDetails = () => {
   }
 
   return (
-    <div>
-      <div className='row mx-5 my-3'>
+    <div className="px-3">
+      <div className='row mb-4'>
         <div className='col-9'>
-          <div className='d-flex gap-3'>
+          <div className='d-flex justify-content-between gap-3'>
             <ShowAllProducts productArray={imgs} />
             <ProductInfo />
           </div>
 
-          <div className='shadow-sm mt-4'>
+          {/* <div className='shadow-sm mt-4'>
             <div>
               <button type='button' className='btn border-0 ' onClick={() => handleTabs('description')}>Description</button>
               <button type='button' className='btn border-0' onClick={() => handleTabs('additional_info')}>Additional info</button>
@@ -71,7 +72,54 @@ const PurchageDetails = () => {
               )}
 
             </div>
+          </div> */}
+          <div className="tabs-container">
+            <div className="tabs-header">
+              <button
+                type="button"
+                className={`tab-btn ${tabType === 'description' ? 'active' : ''}`}
+                onClick={() => handleTabs('description')}
+              >
+                Description
+              </button>
+              <button
+                type="button"
+                className={`tab-btn ${tabType === 'additional_info' ? 'active' : ''}`}
+                onClick={() => handleTabs('additional_info')}
+              >
+                Additional info
+              </button>
+              <button
+                type="button"
+                className={`tab-btn ${tabType === 'vendor' ? 'active' : ''}`}
+                onClick={() => handleTabs('vendor')}
+              >
+                Vendor
+              </button>
+              <button
+                type="button"
+                className={`tab-btn ${tabType === 'review' ? 'active' : ''}`}
+                onClick={() => handleTabs('review')}
+              >
+                Review(3)
+              </button>
+            </div>
+
+            <div className="tabs-content">
+              {tabType === 'description' ? (
+                <ProductDescription />
+              ) : tabType === 'additional_info' ? (
+                <AdditionalInfo />
+              ) : tabType === 'vendor' ? (
+                <VendorDetails />
+              ) : tabType === 'review' ? (
+                <ProductReview />
+              ) : (
+                <div>Invalid tab</div>
+              )}
+            </div>
           </div>
+
           <RelatedProducts />
 
         </div>
@@ -83,6 +131,7 @@ const PurchageDetails = () => {
           <SideBanner />
         </div>
       </div>
+      
       <SliderComponent />
       <ServiceProvide />
     </div>

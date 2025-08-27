@@ -1,0 +1,50 @@
+/* Tabs container */
+.tabs-container {
+  margin-top: 1.5rem;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  overflow: hidden;
+  font-family: sans-serif;
+}
+
+/* Header */
+.tabs-header {
+  display: flex;
+  border-bottom: 1px solid #eee;
+  background: #f9f9f9;
+}
+
+/* Tab button */
+.tab-btn {
+  flex: 1;
+  padding: 12px 16px;
+  text-align: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #555;
+  transition: all 0.3s ease;
+}
+
+.tab-btn:hover {
+  background: #f0f0f0;
+}
+
+/* Active tab */
+.tab-btn.active {
+  color: #3bb77e;
+  border-bottom: 3px solid #3bb77e;
+  background: #fff;
+  font-weight: 600;
+}
+
+/* Content */
+.tabs-content {
+  padding: 1.5rem;
+  font-size: 0.95rem;
+  color: #444;
+  line-height: 1.5;
+}
