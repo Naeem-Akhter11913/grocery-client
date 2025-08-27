@@ -6,7 +6,7 @@ import GreyLine from '../greyLine'
 
 const TrendingProducts = () => {
   return (
-    <div className='d-flex gap-3 mx-3'>
+    <div className='trending-product-container px-3'>
 
       <div>
         <GreyLine title="Top Selling" />

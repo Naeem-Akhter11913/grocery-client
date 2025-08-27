@@ -103,6 +103,7 @@ h2 {
   /* ~ 3/9 split */
   gap: var(--gutter);
   margin: 12px 8px;
+  transition: grid-template-columns 0.4s ease-in-out, gap 0.3s ease-in-out;
 }
 
 .daily-best-left,
@@ -110,6 +111,7 @@ h2 {
   min-width: 0;
   /* prevents overflow */
   height: 100%;
+  transition: order 0.4s ease-in-out;
 }
 
 
@@ -124,6 +126,8 @@ h2 {
   height: 30rem;
   display: flex;
   /* keep inner text aligned */
+  transition: height 0.4s ease-in-out, width 0.4s ease-in-out;
+
 }
 
 
@@ -156,6 +160,7 @@ h2 {
   .daily-best-grid {
     --gutter: 16px;
     grid-template-columns: 2fr 3fr;
+    
   }
 }
 
