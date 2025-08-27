@@ -11,19 +11,19 @@ const Footer = () => {
         <div className="col-md-3 col-sm-6 order-1 footer-sub-container">
           <img src="/navebar/logo.svg" alt="Nest Logo" width="120" />
           <ul className="list-unstyled">
-            <li className="mb-2">
+            <li className="mb-2 d-flex">
               <img src="/footer/icon-clock.svg" alt="contact" height={20} className='me-2' />
               <strong>Address:</strong> 5171 W Campbell Ave, undefined Kent, Utah 53127 United States
             </li>
-            <li className="mb-2">
+            <li className="mb-2 d-flex">
               <img src="/footer/icon-contact.svg" alt="contact" height={20} className='me-2' />
               <strong>Call Us:</strong> (+91) - 540-025-124553
             </li>
-            <li className="mb-2">
+            <li className="mb-2 d-flex">
               <img src="/footer/icon-email-2.svg" alt="contact" height={20} className='me-2' />
               <strong>Email:</strong> sale@Nest.com
             </li>
-            <li>
+            <li className='d-flex'>
               <img src="/footer/icon-location.svg" alt="contact" height={20} className='me-2' />
               <strong>Hours:</strong> 10:00 - 18:00, Mon - Sat
             </li>
@@ -93,7 +93,7 @@ const Footer = () => {
       </div>
       <hr className='mt-4' />
 
-      <div className='footer-bottom d-flex flex-wrap gap-4 justify-content-between align-items-center pb-4'>
+      <div className='footer-bottom'>
         <div className='d-flex flex-wrap'>
           <p className='mb-0 text-wrap'>© 2022, Nest - HTML Ecommerce Template</p>
           <p className='mb-0 text-wrap'>All rights reserved</p>

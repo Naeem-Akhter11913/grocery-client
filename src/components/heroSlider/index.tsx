@@ -21,10 +21,21 @@ const HeroSlider = () => {
             </h1>
             <p className="mb-65">Sign up for the daily newsletter</p>
 
-            <div className='send-message mt-5'>
+            {/* <div className='send-message mt-5'>
               <input type="text" className='bg-white' placeholder='Your email address' id='input-field' name='field-input' />
               <button type='button'>Subscribe</button>
-            </div>
+            </div> */}
+            <form className="newsletter mt-3" onSubmit={(e) => e.preventDefault()} aria-label="Subscribe to newsletter">
+          <label className="visually-hidden" htmlFor="newsletter-email">Your email address</label>
+          <input
+            id="newsletter-email"
+            type="email"
+            className="newsletter__input"
+            placeholder="Your email address"
+            required
+          />
+          <button type="submit" className="newsletter__button">Subscribe</button>
+        </form>
           </div>
         </div>
         <div className="carousel-item active position-relative">
@@ -37,10 +48,21 @@ const HeroSlider = () => {
             </h1>
             <p className="mb-65">Save up to 50% off on your first order</p>
 
-            <div className='send-message margin-top position-absolute'>
+            {/* <div className='send-message margin-top position-absolute'>
               <input type="text" className='bg-white' placeholder='Your email address' id='send-message-field' name='send-message-fileds' />
               <button type='button' className='postion-relative'>Subscribe</button>
-            </div>
+            </div> */}
+            <form className="newsletter mt-3" onSubmit={(e) => e.preventDefault()} aria-label="Subscribe to newsletter">
+              <label className="visually-hidden" htmlFor="newsletter-email">Your email address</label>
+              <input
+                id="newsletter-email"
+                type="email"
+                className="newsletter__input"
+                placeholder="Your email address"
+                required
+              />
+              <button type="submit" className="newsletter__button">Subscribe</button>
+            </form>
           </div>
         </div>
       </div>
