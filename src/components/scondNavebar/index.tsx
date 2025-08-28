@@ -43,7 +43,7 @@ const ScondeNavebar = () => {
       if (scrollTop > 150) {
         setIsInView(true);
       }
-      if (scrollTop === 0) setIsInView(false)
+      if (scrollTop <= 63) setIsInView(false)
 
       lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
     };
@@ -56,7 +56,9 @@ const ScondeNavebar = () => {
 
 
   return (
-    <div className={`border w-100 bg-white border-1 px-2 mt-3 mb-3 custom-second-padding ${isInView ? 'fixed-navbar' : ''}`} ref={detectDOMHeight}>
+    <>
+    {isInView && <div style={{ height: detectDOMHeight.current?.offsetHeight }}></div>}
+    <div className={`border w-100 bg-white border-1 px-2 mb-3 custom-second-padding ${isInView ? 'fixed-navbar' : ''}`} ref={detectDOMHeight}>
       <div className='left-content d-flex align-items-center position-relative'>
         <button className='btn btn-success text-nowrap' onClick={handleOpen}>
           <LevelRows />
@@ -100,7 +102,7 @@ const ScondeNavebar = () => {
           />
         }
         )}
-        
+
 
       </div>
 
@@ -112,6 +114,7 @@ const ScondeNavebar = () => {
         </div>
       </div>
     </div>
+    </>
   )
 }
 
