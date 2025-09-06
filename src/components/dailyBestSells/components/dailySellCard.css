@@ -1,0 +1,157 @@
+.daily-sell-card {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    height: 500px;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #fff;
+    transition: transform 0.3s ease;
+    padding: 1rem;
+}
+
+.daily-sell-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-image-container {
+    text-align: center;
+    position: relative;
+}
+
+.product-image {
+    object-fit: contain;
+    /* max-width: 100%; */
+    height: auto;
+    transition: opacity 0.3s ease;
+}
+
+.hover-tooltip-icons {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    padding: 0.3rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.hover-tooltip-icons button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.hover-tooltip-icons button:hover {
+    transform: scale(1.1);
+}
+
+.daily-sell-body {
+    padding-top: 1rem;
+}
+
+.daily-sell-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0.5rem 0;
+}
+
+.daily-sell-price {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #28a745;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+
+
+
+/* Extra Small (≤575px) */
+@media (max-width: 575.98px) {
+    .daily-best-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .daily-best-right {
+        order: 2;
+    }
+
+    .daily-best-left {
+        order: 1;
+    }
+
+    .position-relative-custom {
+        width: 268px;
+    }
+
+    .cart-style {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+    }
+}
+
+/* Small (576px – 767px) */
+ @media (min-width: 576px) and (max-width: 767.98px) {
+    .daily-best-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .daily-best-right {
+        order: 2;
+    }
+
+    .daily-best-left {
+        order: 1;
+    }
+     .slide-content-custom{
+        padding: 0px 125px !important;
+    }
+    .swiper-slide {
+            width: 240px !important;
+    }
+    
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .daily-best-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .daily-best-right {
+        order: 2;
+    }
+
+    .daily-best-left {
+        order: 1;
+    }
+    .slide-content-custom{
+                padding: 0px 186px !important;
+    }
+
+    /* .position-relative-custom,
+    .cart-style {
+        width: auto !important;
+    } */
+     .swiper-slide {
+            width: 240px !important;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .swiper-slide {
+            width: 240px !important;
+    }
+}
+
+@media (min-width: 1200px) and (max-width: 1399.98px) {}
+/*
+
+@media (min-width: 1400px) {} */

@@ -1,0 +1,100 @@
+.list-unstyled li a {
+    font-size: 15px;
+    color: #253D4E;
+    display: block;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.list-unstyled li a:hover {
+    color: #3BB77E;
+    text-decoration: none;
+    transform: translateX(8px);
+}
+ 
+.social-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #3BB77E;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    color: #ffffff;
+    transition: transform 0.3s ease-in-out;
+}
+
+.social-icons:hover {
+    transform: translateY(-5px);
+}
+.footer-sub-container>div>img{
+    width: 8rem;
+}
+
+.footer-bottom{
+    /* d-flex flex-wrap gap-4 justify-content-between align-items-center pb-4 */
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px;
+    flex-wrap: wrap;
+}
+
+.align-items-center>img{
+    width: 3rem;
+}
+.footer-sub-container>ul{
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+}
+
+@media (max-width: 575.98px) {
+    .footer-container .footer-sub-container>ul>li>a {
+        text-align: center;
+        text-wrap: nowrap;
+    }
+
+    .footer-container .footer-sub-container {
+        margin-bottom: 12px;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    }
+
+    .footer-container .footer-sub-container>ul {
+        justify-content: center !important;
+    }
+
+    .footer-container .footer-sub-container>h5 {
+        text-align: center;
+    }
+    .footer-bottom{
+        justify-content: space-around;
+        gap: 1rem;
+    }
+}
+
+
+/* Small (576px – 767px) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+       .footer-bottom{
+        justify-content: space-around;
+    }
+}
+
+
+/* Medium (768px – 991px) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .footer-bottom{
+        justify-content: space-around;
+    }
+}
+
+/* Large (992px – 1199px) */
+@media (min-width: 992px) and (max-width: 1199.98px) {}
+
+/* Extra Large (1200px – 1399px) */
+@media (min-width: 1200px) and (max-width: 1399.98px) {}
+
+/* XXL (≥1400px) */
+@media (min-width: 1400px) {}

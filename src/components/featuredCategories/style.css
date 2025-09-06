@@ -1,0 +1,127 @@
+.swiper-custom-wrapper {
+  width: 100%;
+}
+
+.category-item {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid #ffffff;
+  padding: 14px;
+  border-radius: 8px;
+  transition: transform 0.3s ease, border 0.3s ease, box-shadow 0.3s ease;
+  background-color: #fff8e1;
+  align-items: center;
+}
+
+.category-item:hover {
+  border: 1px solid #BCE3C9;
+  box-shadow: 0px 4px 10px rgba(42, 41, 41, 0.1);
+  cursor: pointer;
+}
+
+.category-item img {
+  max-width: 80px;
+  height: auto;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease;
+}
+
+.category-item img:hover {
+  transform: scale(1.1);
+}
+
+.category-item h3 {
+  font-size: 17px;
+  margin: 0;
+}
+
+.category-item h3 a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.category-item p {
+  font-size: 12px;
+  color: #555;
+  margin: 5px 0 0;
+}
+
+.swapper-overfollow {
+  overflow: visible !important;
+}
+
+.featured-categories-container {
+  justify-content: space-between !important;
+}
+
+.custom-next,
+.custom-prev {
+
+  background: #F2F3F4;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 45px;
+  font-size: 16px;
+  color: #7E7E7E;
+  transition: background-color 0.5s ease-in-out !important;
+}
+
+.custom-next:hover,
+.custom-prev:hover {
+  cursor: pointer;
+  background-color: #3BB77E;
+  color: #fff;
+  border-color: #3BB77E;
+}
+
+.custom-next {
+  transition: margin-bottom 0.5s ease-in-out !important;
+  z-index: 9;
+}
+
+.custom-prev {
+  transition: margin-bottom 0.5s ease-in-out !important;
+  z-index: 9;
+}
+
+/* Extra Small (≤575px) */
+@media (max-width: 575.98px) {}
+
+/* Small (576px – 767px) */
+@media (min-width: 576px) and (max-width: 767.98px) {}
+
+@media (max-width: 836px) {
+  .custom-prev {
+    position: absolute;
+    margin-bottom: -17rem !important;
+    z-index: 9;
+    left: 12px;
+  }
+
+  .custom-next {
+    position: absolute;
+    margin-bottom: -17rem !important;
+    z-index: 9;
+    right: 12px;
+  }
+
+  .featured-categories-container {
+    justify-content: center !important;
+  }
+}
+
+/* Medium (768px – 991px) */
+@media (min-width: 768px) and (max-width: 991.98px) {}
+
+/* Large (992px – 1199px) */
+@media (min-width: 992px) and (max-width: 1199.98px) {}
+
+/* Extra Large (1200px – 1399px) */
+@media (min-width: 1200px) and (max-width: 1399.98px) {}
+
+/* XXL (≥1400px) */
+@media (min-width: 1400px) {}

@@ -1,0 +1,34 @@
+.d-grid-custom {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(243px, 1fr));
+  gap: 12px;
+  width: 100%;
+}
+
+.d-grid>div {
+  width: 100%;
+}
+
+.card {
+  max-width: 100%;
+}
+
+
+@media (max-width: 575.98px) {
+  .d-grid-custom {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+}
+
+@media (max-width: 450px) {
+  .d-grid-custom {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  .d-grid-custom > div {
+    max-width: 243px;
+    width: 100%;
+  }
+}

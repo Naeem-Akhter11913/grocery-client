@@ -1,0 +1,33 @@
+.center-css {
+    width: 13rem;
+    line-height: 20px;
+
+}
+
+.see-less {
+    height: 210px;
+    overflow: hidden;
+}
+
+.center-css p {
+    font-size: 19px;
+    cursor: pointer;
+}
+
+
+
+/* Medium devices (≥768px) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  
+}
+
+/* Large devices (≥992px) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  
+}
+
+/* 
+@media (min-width: 1200px) and (max-width: 1399.98px) {}
+
+@media (min-width: 1400px) {
+} */

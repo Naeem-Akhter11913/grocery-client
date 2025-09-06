@@ -1,0 +1,41 @@
+.search-style input {
+     border: 1px solid #ececec;
+    border-radius: 30px !important;/* keep one consistent radius */
+    height: 64px;
+    box-shadow: 20px 20px 40px rgba(0, 0, 0, 0.07);
+    padding-left: 30px;
+    font-size: 20px;
+    width: 100%;
+}
+
+.search-style button {
+    top: 0;
+    right: 0;
+    left: 44rem;
+    border-radius: 30px;
+    height: 64px;
+    font-size: 20px;
+}
+
+.search-style button:focus {
+    border: none !important;
+}
+
+.search-style input:focus-visible {
+    outline: none !important;
+}
+
+
+.filter-style {
+    margin-top: 50px;
+}
+
+.filter select {
+    width: 10rem !important;
+}
+
+.filter select:focus {
+    outline: none;
+    box-shadow: none;
+    border-color: #ececec
+}

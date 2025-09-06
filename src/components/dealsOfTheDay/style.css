@@ -1,0 +1,95 @@
+.deals-of-the-day {
+    margin-bottom: 8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.deals_container {
+    position: relative;
+}
+
+.timing_container {
+    position: absolute;
+    /* <-- change this from relative to absolute */
+    top: 87%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+}
+
+.deals_container img {
+    width: auto;
+    border-radius: 12px;
+    height: 20rem;
+    object-fit: cover;
+}
+
+.timing_sub_container {
+    line-height: 0;
+}
+
+.time_fixed_width {
+    width: 64px;
+    border-radius: 7px;
+}
+
+.time_fixed_width h1 {
+    font-size: 30px;
+    font-weight: 100;
+}
+
+
+/* Extra Small (≤575px) */
+@media (max-width: 575.98px) {
+    .deals_container {
+        margin-bottom: 8rem;
+    }
+
+    .deals_container img {
+        height: auto;
+        height: 20rem;
+    }
+
+    .deals_container>div {
+        padding: 10px;
+    }
+}
+
+/* Small (576px – 767px) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .deals_container {
+        margin-bottom: 8rem;
+    }
+}
+
+
+/* Medium (768px – 991px) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .deals_container {
+        margin-bottom: 8rem;
+    }
+}
+
+/* Large (992px – 1199px) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .deals_container {
+        margin-bottom: 8rem;
+    }
+}
+
+/* Extra Large (1200px – 1399px) */
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+    .deals_container {
+        margin-bottom: 8rem;
+    }
+}
+
+/* XXL (≥1400px) */
+@media (min-width: 1400px) {
+    .deals_container {
+        margin-bottom: 8rem;
+    }
+}

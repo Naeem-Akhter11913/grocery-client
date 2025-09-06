@@ -1,0 +1,173 @@
+/* ===== Wrapper & Carousel ===== */
+.wrapper {
+  width: 100%;
+  padding-top: 20px;
+  text-align: center;
+}
+
+h2 {
+  font-family: sans-serif;
+  color: #fff;
+}
+
+.carousel {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.slick-slide {
+  margin: 10px;
+  width: 276px;
+  /* single definition instead of !important */
+}
+
+.slick-slide img {
+  width: 100%;
+  border: 2px solid #fff;
+}
+
+.wrapper .slick-dots li button:before {
+  font-size: 20px;
+  color: white;
+}
+
+.slick-track {
+  transition: transform 1.5s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+/* ===== Buttons inside text section ===== */
+.daily-best-sale-text button {
+  background-color: #3BB77E;
+  border: none;
+  padding: 8px 16px;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  width: 125px;
+  text-align: start;
+  display: flex;
+  transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.daily-best-sale-text button span {
+  margin-left: 4px;
+  transition: margin-left 0.3s ease;
+}
+
+.daily-best-sale-text button:hover {
+  background-color: #FDC040;
+  width: 135px;
+}
+
+.daily-best-sale-text button:hover span {
+  margin-left: 14px;
+}
+
+.daily-best-sale-text:hover h3 {
+  transform: translateY(-5px);
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+/* ===== Slider Card Height ===== */
+.custom-heigth {
+  max-width: 306px;
+  height: 500px;
+  overflow: hidden;
+  border: 1px solid green;
+  position: relative;
+}
+
+/* ===== Slick Arrows ===== */
+.slick-prev,
+.slick-next {
+  z-index: 9999;
+  background-color: red;
+}
+
+.slick-prev {
+  left: 14px;
+}
+
+.slick-next {
+  right: 17px;
+}
+
+/* ===== Daily Best - Custom CSS Grid ===== */
+.daily-best-grid {
+  --gutter: 16px;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  /* ~ 3/9 split */
+  gap: var(--gutter);
+  margin: 12px 8px;
+  transition: grid-template-columns 0.4s ease-in-out, gap 0.3s ease-in-out;
+}
+
+.daily-best-left,
+.daily-best-right {
+  min-width: 0;
+  /* prevents overflow */
+  height: 100%;
+  transition: order 0.4s ease-in-out;
+}
+
+
+/* ===== Cover Banner ===== */
+.cover-bg-image {
+  background-image: url('/daily-best-sells/banner-4.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 10px;
+  margin-top: 15px;
+  height: 30rem;
+  display: flex;
+  /* keep inner text aligned */
+  transition: height 0.4s ease-in-out, width 0.4s ease-in-out;
+
+}
+
+
+/* Extra Small (≤575px) */
+@media (max-width: 575.98px) {
+  .cover-bg-image {
+    width: auto;
+    height: auto;
+  }
+
+}
+
+/* Small (576px – 767px) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .cover-bg-image {
+    width: auto;
+    height: auto;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .cover-bg-image {
+    width: auto;
+    height: auto;
+  }
+}
+
+/* Large (992px – 1199px) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .daily-best-grid {
+    --gutter: 16px;
+    grid-template-columns: 2fr 3fr;
+    
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+  /* .daily-best-grid {
+    grid-template-columns: 1fr 1fr;
+  } */
+}
+
+/* transform: translate3d(-1302px, 0px, 0px); */

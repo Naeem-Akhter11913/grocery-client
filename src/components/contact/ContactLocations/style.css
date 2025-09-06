@@ -1,0 +1,64 @@
+.locations-container {
+  display: flex;
+  justify-content: space-between;
+  /* align-items: center; */
+  gap: 2rem;
+  margin: 3rem 0;
+  flex-wrap: wrap;
+}
+
+.location-card {
+  text-align: left;
+}
+
+.location-card h3 {
+  color: #198754; /* green */
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.location-card p {
+  margin: 0.3rem 0;
+  color: #6c757d; /* muted gray */
+  font-size: 0.95rem;
+}
+
+.location-card a {
+  color: #6c757d;
+  text-decoration: underline dotted;
+}
+
+.map-btn {
+  margin-top: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #20c997; /* teal green */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 0.6rem 1.2rem;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+.map-btn:hover {
+  background-color: #198754; /* darker green */
+}
+
+.map-btn .icon {
+  font-size: 1rem;
+}
+
+
+@media (max-width: 919px) {
+  .location-card{
+    border: 1px solid rgb(187, 186, 186);
+    padding: 12px;
+    border-radius: 12px;
+  }
+  .locations-container{
+    justify-content: space-around;
+  }
+}

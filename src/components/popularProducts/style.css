@@ -1,0 +1,121 @@
+.popular-products-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.popular-custom-style li {
+  color: inherit;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.popular-custom-style li:hover {
+  color: #3BB77E;
+  transform: translateY(-5px);
+}
+
+.product-image-container {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-image {
+  object-fit: contain;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.position-relative-custom {
+  position: relative !important;
+  max-height: 500px;
+}
+
+.custom-badge {
+  color: #ffffff;
+  text-align: center;
+  padding: 5px 30px;
+  border-radius: 0.375rem 0 0.375rem 0;
+}
+
+.custom-button-css {
+  background-color: #DEF9EC;
+  color: #3BB77E;
+  border: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.custom-button-css:hover {
+  background-color: #3BB77E;
+  transform: translateY(-5px);
+}
+
+.product-image-container img {
+  transition: transform 0.6s ease;
+}
+
+.custom-cart-hover-effect {
+  width: auto;
+  height: 500px;
+  transition: border 0.3s ease;
+}
+
+.custom-cart-hover-effect:hover {
+  border: 1px solid #3BB77E !important;
+}
+
+.custom-cart-hover-effect:hover .product-image-container img {
+  transform: scale(1.2);
+}
+
+.custom-tootip-style {
+  position: absolute;
+  border: 1px solid #BCE3C9;
+  z-index: 1;
+  background-color: #ffffff;
+  border-radius: 10px;
+}
+
+.custom-tootip-style button {
+  border: 1px solid #BCE3C9;
+  color: #3BB77E;
+  background-color: #ffffff;
+  padding: 5px 20px;
+}
+
+.custom-tootip-style button:first-child {
+  border-radius: 10px 0 0 10px;
+}
+
+.custom-tootip-style button:last-child {
+  border-radius: 0 10px 10px 0;
+}
+
+.custom-tootip-style button:hover {
+  color: #ffc107;
+}
+
+.custom-brand,
+.text-muted-custom {
+  transition: color 0.3s ease;
+}
+
+.custom-brand:hover {
+  color: #ffc107 !important;
+  cursor: pointer;
+}
+
+.text-decoration {
+  color: #000000;
+  transition: color 0.3s ease;
+}
+
+.text-decoration:hover {
+  cursor: pointer;
+  color: #3BB77E;
+}
+
+.text-muted-custom:hover {
+  color: #3BB77E !important;
+  cursor: pointer;
+}

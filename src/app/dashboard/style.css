@@ -1,0 +1,22 @@
+.tab-container{
+    display: grid;
+    grid-template-columns: 15% 80%;
+    column-gap: 100px;
+}
+
+.tab-sum-container{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.tab-sum-container button{
+    min-width: 100%;
+    text-align: center;
+    transition: color 0.3s ease-in-out , background-color 0.3s ease-in-out;
+}
+
+.tab-sum-container button:hover{
+    background-color: #33af75;
+    color: #ffffff;
+}

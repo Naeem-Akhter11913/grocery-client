@@ -1,0 +1,42 @@
+/* .banner-container{
+    background-image: url('/side-banner/banner-11.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 25rem;
+    border-radius: 5px;
+} */
+ .banner-container {
+  background-image: url(/side-banner/banner-11.png);
+  background-repeat: no-repeat;
+  background-size: cover;   /* fill full area */
+  background-position: center; /* keep image centered */
+  width: 100%;              /* take full parent width */
+  height: 24rem;
+  border-radius: 5px;
+}
+
+
+
+
+.banner-inner-container{
+    padding-top: 100px;
+    padding-left: 40px;
+    width: 150px;
+}
+.banner-inner-container span{
+    color: #adadad;
+}
+.banner-inner-container h5{
+    margin-top: 10px;
+    line-height: 30px;
+    transition: transform 0.3s ease 0s;
+}
+
+.banner-inner-container h5 > span{
+    color: #3BB77E;
+}
+
+.banner-inner-container:hover h5{
+    transform: translateY(-10px);
+    cursor: pointer;
+}

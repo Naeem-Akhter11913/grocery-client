@@ -1,0 +1,55 @@
+.store-card {
+    border: 1px solid #e0f1e7;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    position: relative;
+}
+
+.store-badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #f54e84;
+    color: white;
+    padding: 5px 15px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    font-size: 14px;
+}
+
+.store-logo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: contain;
+}
+
+.rating i {
+    color: #ffb400;
+}
+
+.product-count {
+    background: #e6f9ef;
+    color: #00a650;
+    padding: 6px 12px;
+    border-radius: 5px;
+    font-weight: 500;
+    font-size: 14px;
+    display: inline-block;
+    margin-top: 8px;
+}
+
+.call-info {
+    font-size: 14px;
+    color: #666;
+}
+
+.btn-visit {
+    padding: 6px 14px;
+    font-size: 14px;
+}

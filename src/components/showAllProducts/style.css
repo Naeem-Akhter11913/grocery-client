@@ -1,0 +1,147 @@
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  width: 50%;
+  position: relative;
+  font-family: sans-serif;
+  height: 33rem;
+}
+
+.image {
+  display: flex;
+  align-items: center;
+}
+
+.image img {
+  width: 100%;
+  max-width: 28rem;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  border: 2px solid #e6e6e6;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  max-width: 28rem;
+}
+
+.show-image-container {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding: 5px;
+}
+
+.show-image-container::-webkit-scrollbar {
+  display: none;
+}
+
+.show-image-container img {
+  height: 80px;
+  /* min-width: 80px; */
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out, border 0.3s;
+  cursor: pointer;
+  object-fit: cover;
+}
+
+.show-image-container img:hover {
+  transform: scale(1.1);
+}
+
+.img-active {
+  border: 2px solid #3BB77E;
+}
+
+.left-rigth-arrow {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  padding: 0 0.5rem;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.main-container:hover .left-rigth-arrow {
+  opacity: 1;
+}
+
+.left-rigth-arrow>div {
+  height: 40px;
+  width: 40px;
+  background-color: rgba(238, 237, 237, 0.9);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.left-rigth-arrow>div:hover {
+  background-color: #3BB77E;
+  color: white;
+  cursor: pointer;
+}
+
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.image img.animate-right {
+  animation: slideInRight 0.4s ease forwards;
+}
+
+.image img.animate-left {
+  animation: slideInLeft 0.4s ease forwards;
+}
+
+@media (max-width: 575.98px) {
+  .main-container {
+    justify-content: space-evenly;
+  }
+
+  .product-description {
+    padding: 0 !important;
+  }
+
+  .product-card {
+    padding: 0 !important;
+  }
+
+  .tabs-content {
+    padding: 0 !important;
+  }
+}

@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Grid: Sticky Short + Scrolling Tall</title>
+  <style>
+    :root {
+      --gap: 24px;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, Arial, sans-serif;
+      line-height: 1.6;
+      background: #f7f7fb;
+      color: #222;
+    }
+
+    .wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 32px 16px;
+    }
+
+    /* Grid layout */
+    .grid {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      /* left small, right big */
+      gap: var(--gap);
+      align-items: start;
+      /* important so sticky works */
+    }
+
+    /* Small (short) column */
+    .short {
+      position: sticky;
+      top: 16px;
+      bottom: 16px;
+      /* add this line */
+      align-self: start;
+      background: #fff;
+      border: 1px solid #ececec;
+      border-radius: 14px;
+      padding: 16px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, .06);
+    }
+
+
+    /* Tall content column */
+    .tall {
+      background: #fff;
+      border: 1px solid #ececec;
+      border-radius: 14px;
+      padding: 20px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, .06);
+    }
+
+    .block {
+      margin: 0 0 20px;
+      padding: 16px;
+      border-radius: 10px;
+      background: #f2f5ff;
+    }
+
+    /* Responsive: stack on small screens */
+    @media (max-width: 760px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .short {
+        position: static;
+      }
+
+      /* no sticky on mobile stack */
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <h1>Sticky Short Column, Tall Column Scrolls</h1>
+
+    <div class="grid">
+      <aside class="tall">
+        <h2>Short Box</h2>
+        <p>Yeh chhota content hai. Page scroll hote hue yeh box top par chipka rahega, aur apne container ke end par ruk
+          jaayega.</p>
+        <p>Iske andar zyada contentkjsdhfb sdfhsi fsdf ssldfhsd falgh;a flgh agsl asldfs;g sldfsd sludyfgsdg sliygsidf
+          ighilsuf slflsi sdfsli sljfhs lsdhf shdl sdf;s dd sglhbsd sdlsd lsds dlsd s;ih nahi hai, isliye “jab tak
+          content ho tab tak” dikhai dega.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas autem minus ducimus ipsum architecto impedit
+          animi harum tenetur? Repudiandae excepturi officia perferendis dolor dolores asperiores ipsum laboriosam
+          eveniet itaque provident!
+          Sequi suscipit id debitis nostrum nihil consequatur, modi architecto distinctio libero, quae ipsum odit
+          repellat, quas tenetur dolore. Nam corrupti beatae illo magni quas voluptate cumque iure dolorem ut suscipit?
+          Autem corporis debitis eaque, consequatur ea maxime numquam totam. Cum rerum praesentium eligendi repellendus,
+          ab eaque reiciendis nihil ex. Porro quae velit excepturi? Eius minus nisi fuga ut, perferendis quas?
+          Reiciendis quidem enim quas, doloremque odit delectus ex et voluptas modi debitis, sed asperiores ea aliquam
+          architecto, eaque consequuntur praesentium aperiam veniam adipisci repellat non doloribus explicabo sint aut.
+          Explicabo.
+          Itaque ipsam tempore rpora ad consequuntur adipisci cum nobis! Expedita incidunt quos possimus dolores.
+          Cupiditate, repellat maxime, tenetur beatae deleniti, ullam veritatis accusamus voluptatem ea provident magnam
+          temporibus expedita!
+          Deleniti inventore accusantium, officiis fugit repellat velit ipsa animi, explicabo amet iure cum quasi
+          exercitationem aliquid soluta beatae libero doloribus atque tenetur vel eum nemo vero, voluptatum harum. Nisi,
+          expedita.
+          Possimus expedita aspernatur excepturi omnis illo quod asperiores assumenda, dicta amet aut voluptatibus
+          pariatur facere alias, magnam ullam ea fuga molestiae. Odio assumenda enim voluptas voluptates facilis veniam
+          quod ratione.
+          Sit aliquid reprehenderit inventore ipsum facilis autem, fugiat necessitatibus optio consectetur officia
+          maiores ratione totam perspiciatis, provident sed numquam enim tenetur magnam ut debitis quidem sint. Vel
+          repellat consequuntur odio?</p>
+
+      </aside>
+
+      <main class="short">
+        <h2>Tall Content</h2>
+        <!-- Just to create height -->
+        <div class="block">Paragraph 1</div>
+        <div class="block">Paragraph 2</div>
+        <div class="block">Paragraph 3</div>
+        <div class="block">Paragraph 4</div>
+        <div class="block">Paragraph 5</div>
+        <div class="block">Paragraph 6</div>
+        <div class="block">Paragraph 7</div>
+        <div class="block">Paragraph 8</div>
+        <div class="block">Paragraph 9</div>
+        <div class="block">Paragraph 10</div>
+        <div class="block">Paragraph 11</div>
+        <div class="block">Paragraph 12</div>
+      </main>
+    </div>
+  </div>
+</body>
+
+</html>

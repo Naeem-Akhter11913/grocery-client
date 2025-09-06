@@ -1,0 +1,33 @@
+.product-description {
+  background-color: #ffffff;
+  padding: 1.5rem; /* same as Bootstrap p-4 */
+  border-radius: 6px;
+  color: #333;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+.product-description__section {
+  margin-bottom: 1.5rem;
+}
+
+.product-description__heading {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: #222;
+}
+
+.product-description__list {
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+}
+
+.product-description__list li {
+  margin-bottom: 0.5rem;
+}
+
+.product-description__list strong {
+  font-weight: 600;
+  color: #000;
+}

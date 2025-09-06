@@ -1,0 +1,52 @@
+.left-content {
+  position: relative;
+}
+
+
+.tooltip-box {
+  background: white;
+  border: 1px solid #ccc;
+  padding: 8px 12px;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+
+.category-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  background: #fff;
+  border-radius: 10px;
+  border: 1px solid #eee;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.category-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.category-icon {
+  font-size: 30px;
+}
+
+.show-more {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: #28a745;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.show-categories {
+  display: none;
+}
+
+.category-container {
+  overflow: hidden;
+  transition: height 0.4s ease;
+}

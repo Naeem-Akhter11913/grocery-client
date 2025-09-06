@@ -1,0 +1,23 @@
+
+.search-style button:focus {
+    border: none !important;
+}
+
+.search-style input:focus-visible {
+    outline: none !important;
+}
+
+
+.filter-style {
+    margin-bottom: 20px;
+}
+
+.filter select {
+    width: 10rem !important;
+}
+
+.filter select:focus {
+    outline: none;
+    box-shadow: none;
+    border-color: #ececec
+}

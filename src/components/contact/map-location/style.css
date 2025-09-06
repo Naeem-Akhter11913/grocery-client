@@ -1,0 +1,7 @@
+
+.gm-style-cc{
+    display: none !important;    
+} 
+div[style*="z-index: 1000000"][style*="position: absolute"][style*="bottom: 0px"] {
+  display: none !important;
+}

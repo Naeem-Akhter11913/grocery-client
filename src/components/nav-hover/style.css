@@ -1,0 +1,42 @@
+.hover-list {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  background-color: white;
+  border: 1px solid #dee2e6;
+  border-radius: 0.25rem;
+  min-width: 200px;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+.hover-list ul {
+  list-style: none;
+  margin: 0;
+  padding: 0.5rem;
+}
+
+.hover-list ul li {
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+/* .hover-list ul li:hover {
+  background-color: #f8f9fa;
+} */
+
+.hover-container:hover .hover-list {
+  display: block;
+}
+
+.link-color {
+  color: initial;
+}
+
+.link-color:hover {
+  color: #3BB77E !important;
+
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
